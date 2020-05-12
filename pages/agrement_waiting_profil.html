@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    
+    <!-- implement font-awesome for icon svg -->
+    <link rel="stylesheet" href="assets/css/all.css">
+
+    <!-- implement boostrap minimal style  -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <!-- implement material design style  -->
+    <link rel="stylesheet" href="assets/css/mdb.css">
+
+    <!-- implement select style -->
+    <link rel="stylesheet" href="assets/css/jquery.betterdropdown.css">
+
+    <!-- implement style for profil page -->
+    <link rel="stylesheet" href="assets/css/profil.css">
+
+    <!-- implement common style for all page -->
+    <link rel="stylesheet" href="assets/css/common.css">
+
+
+    <title>Profil</title>
+</head>
+<body>
+    <div class="page-wrapper chiller-theme toggled">
+        <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+          <i class="fas fa-bars"></i>
+        </a>
+        <nav id="sidebar" class="sidebar-wrapper">
+          <div class="sidebar-content">
+            <div class="sidebar-brand">
+              <a href="./accueil.html">Accueil</a>
+              <div id="close-sidebar">
+                <i class="fas fa-times"></i>
+              </div>
+            </div>
+            <div class="sidebar-header">
+              <div class="user-pic">
+                <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+                  alt="User picture">
+              </div>
+              <div class="user-info">
+                <span class="user-name">Jhon
+                  <strong>Smith</strong>
+                </span>
+                <span class="user-role">Client</span>
+                <span class="user-status">
+                  <i class="fa fa-circle color-success"></i>
+                  <span>En ligne</span>
+                </span>
+              </div>
+            </div>
+            
+            <div class="sidebar-menu">
+              <ul>
+                <li class="header-menu">
+                  <span>Mes Resultats</span>
+                </li>
+                <li class="sidebar-dropdown">
+                  <a href="#">
+                    <i class="fas fa-file-signature"></i>
+                    <span>Agrement</span>
+                    <span class="badge badge-pill badge-info">3</span>
+                  </a>
+                  <div class="sidebar-submenu">
+                    <ul>
+                      <li>
+                        <a href="./agrement_termine_profil.html">Terminé
+                          <span class="badge badge-pill badge-info">3</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="./agrement_waiting_profil.html">En Attente</a>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </li>
+                <li class="sidebar-dropdown">
+                  <a href="#">
+                    <i class="fa fa-chart-line"></i>
+                    <span>Appel d'offre</span>
+                  </a>
+                  <div class="sidebar-submenu">
+                    <ul>
+                      <li>
+                        <a href="#">Terminé</a>
+                      </li>
+                      <li>
+                        <a href="#">En Attente</a>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </li>
+                <li class="sidebar-dropdown">
+                  <a href="#">
+                    <i class="fa fa-globe"></i>
+                    <span>Autres</span>
+                  </a>
+                  
+                </li>
+                <li class="header-menu">
+                  <span>Extra</span>
+                </li>
+                <li>
+                  <a href="./mes_info.html">
+                    <i class="fas fa-user"></i>
+                    <span>Mes informations</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-cog"></i>
+                    <span>Réglage</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- sidebar-menu  -->
+          </div>
+          <!-- sidebar-content  -->
+          <div class="sidebar-footer">
+            <a href="#">
+             &copy; <script>document.write(new Date().getFullYear().toString())</script> MEDLOG
+            </a>
+            <a href="#">
+              <i class="fa fa-power-off"></i>
+            </a>
+          </div>
+        </nav>
+        <!-- sidebar-wrapper  -->
+        <main class="page-content">
+          <div class="container-fluid">
+            <h2>Mes Agrements En Attente</h2>
+            <hr>
+            <div class="row">
+              <div class="col-md-4 col-sm-6 col-xs-6">
+                <div class="card">
+                  <div class="card-header">
+                    <a href="./details_agrement.html"><h4 class="color-primary">AO/RFP-2019N°00004</h4></a>
+                  </div>
+                  <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                      <p>APPEL D'OFFRE EQUIPEMENT DE CLIMIATISATION</p>
+                      <footer class="blockquote-footer">DATE DÉBUT : 31/07/2019</footer>
+                      <footer class="blockquote-footer">DATE FIN : 31/10/2019</footer>
+                    </blockquote>
+                  </div>
+                  <div class="card-footer">
+                    <div class="flexbox flex-space-between">
+                      <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                      <p><i class="fas fa-thumbtack"></i> Biens</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6">
+                <div class="card">
+                  <div class="card-header">
+                    <a href="./details_agrement.html"><h4 class="color-primary">AO/RFP-2019N°00004</h4></a>
+                  </div>
+                  <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                      <p>APPEL D'OFFRE EQUIPEMENT DE CLIMIATISATION</p>
+                      <footer class="blockquote-footer">DATE DÉBUT : 31/07/2019</footer>
+                      <footer class="blockquote-footer">DATE FIN : 31/10/2019</footer>
+                    </blockquote>
+                  </div>
+                  <div class="card-footer">
+                    <div class="flexbox flex-space-between">
+                      <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                      <p><i class="fas fa-thumbtack"></i> Biens</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6">
+                <div class="card">
+                  <div class="card-header">
+                    <a href="./details_agrement.html"><h4 class="color-primary">AO/RFP-2019N°00004</h4></a>
+                  </div>
+                  <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                      <p>APPEL D'OFFRE EQUIPEMENT DE CLIMIATISATION</p>
+                      <footer class="blockquote-footer">DATE DÉBUT : 31/07/2019</footer>
+                      <footer class="blockquote-footer">DATE FIN : 31/10/2019</footer>
+                    </blockquote>
+                  </div>
+                  <div class="card-footer">
+                    <div class="flexbox flex-space-between">
+                      <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                      <p><i class="fas fa-thumbtack"></i> Biens</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6">
+                <div class="card">
+                  <div class="card-header">
+                    <a href="./details_agrement.html"><h4 class="color-primary">AO/RFP-2019N°00004</h4></a>
+                  </div>
+                  <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                      <p>APPEL D'OFFRE EQUIPEMENT DE CLIMIATISATION</p>
+                      <footer class="blockquote-footer">DATE DÉBUT : 31/07/2019</footer>
+                      <footer class="blockquote-footer">DATE FIN : 31/10/2019</footer>
+                    </blockquote>
+                  </div>
+                  <div class="card-footer">
+                    <div class="flexbox flex-space-between">
+                      <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                      <p><i class="fas fa-thumbtack"></i> Biens</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6">
+                <div class="card">
+                  <div class="card-header">
+                    <a href="./details_agrement.html"><h4 class="color-primary">AO/RFP-2019N°00004</h4></a>
+                  </div>
+                  <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                      <p>APPEL D'OFFRE EQUIPEMENT DE CLIMIATISATION</p>
+                      <footer class="blockquote-footer">DATE DÉBUT : 31/07/2019</footer>
+                      <footer class="blockquote-footer">DATE FIN : 31/10/2019</footer>
+                    </blockquote>
+                  </div>
+                  <div class="card-footer">
+                    <div class="flexbox flex-space-between">
+                      <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                      <p><i class="fas fa-thumbtack"></i> Biens</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6">
+                <div class="card">
+                  <div class="card-header">
+                    <a href="./details_agrement.html"><h4 class="color-primary">AO/RFP-2019N°00004</h4></a>
+                  </div>
+                  <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                      <p>APPEL D'OFFRE EQUIPEMENT DE CLIMIATISATION</p>
+                      <footer class="blockquote-footer">DATE DÉBUT : 31/07/2019</footer>
+                      <footer class="blockquote-footer">DATE FIN : 31/10/2019</footer>
+                    </blockquote>
+                  </div>
+                  <div class="card-footer">
+                    <div class="flexbox flex-space-between">
+                      <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                      <p><i class="fas fa-thumbtack"></i> Biens</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+               
+        </main>
+        <!-- page-content" -->
+      </div>
+      <!-- page-wrapper -->
+
+    
+    
+
+    <!-- implement jquery script -->
+    <script src="assets/js/jquery.js"></script>
+
+    <!-- implement font-awesome script -->
+    <script src="assets/js/all.js"></script>
+
+    <!-- implement popper script -->
+    <script src="assets/js/popper.js"></script>
+
+    <!-- implement bootsrap script -->
+    <script src="assets/js/bootstrap.js"></script>
+
+    <!-- implement material design script -->
+    <script src="assets/js/mdb.js"></script>
+
+    <!-- implement select autocomplete script -->
+    <script src="assets/js/jquery.betterdropdown.js"></script>
+
+    <!-- implement profil page script -->
+    <script src="assets/js/profil.js"></script>
+</body>
+</html>

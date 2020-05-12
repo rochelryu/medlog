@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    
+    <!-- implement font-awesome for icon svg -->
+    <link rel="stylesheet" href="assets/css/all.css">
+
+    <!-- implement boostrap minimal style  -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <!-- implement material design style  -->
+    <link rel="stylesheet" href="assets/css/mdb.css">
+
+    <!-- implement select style -->
+    <link rel="stylesheet" href="assets/css/jquery.betterdropdown.css">
+
+    <!-- implement style for details page -->
+    <link rel="stylesheet" href="assets/css/details.css">
+
+    <!-- implement common style for all page -->
+    <link rel="stylesheet" href="assets/css/common.css">
+
+
+    <title>Accueil</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 col-sm-6">
+                <div class="flexbox flex-center-left">
+                    <img src="assets/pictures/logo.png" class='widh-60' alt="" srcset="">
+                    <p class="ml-5 color-grey  h5">Le portails fournisseurs</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 p-v-10">
+                <div class="border-left p-h-10">
+                    <form class="form-authenticate">
+                        <div class="row">
+                            <div class="col-md-12 mb-1">
+                                <h6 class="color-primary">CONNEXION COMPTE</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-5">
+                                <div class="md-form mt-0 mb-0 ">
+                                    <input type="text" id="inputIconEx2" class="form-control">
+                                    <label for="inputIconEx2">Identifiant</label>
+                                  </div>
+                            </div>
+                            <div class="col-md-7 col-sm-5">
+                                <div class="row">
+                                    <div class="col-md-9 col-sm-10">
+                                        <div class="md-form mt-0 mb-0 ">
+                                            <input type="password" id="inputValidationEx2" class="form-control validate">
+                                            <label for="inputValidationEx2">Mot de passe</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-2 p-0">
+                                        <input type="submit" class="btn btn-outline-color-primary waves-effect no-over-shadow" value="OK"/>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <a href="#" class="link-authenticate">Mot de passe oublié ?</a>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <a href="#" class="link-authenticate">Pas encore inscrit ?</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12">
+              <nav class="navbar navbar-expand-sm navbar-dark" id="navbar">
+
+                <!-- Navbar brand -->
+                <a class="navbar-brand" href="./accueil.html"><i class="fas fa-home"></i></a>
+              
+                <!-- Collapse button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                  aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="basicExampleNav">
+              
+                  <!-- Links -->
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuAgrement" data-toggle="dropdown" >agrément</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuAgrement">
+                          <a class="dropdown-item" href="./search_result.html">Participer à un agrément</a>
+                          <a class="dropdown-item" href="./update_agrement.html">Mettre à jour un agrément</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuAgrement" data-toggle="dropdown" >appel d'offre</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuAgrement">
+                          <a class="dropdown-item" href="#">Participer à un appel d'offre</a>
+                          <a class="dropdown-item" href="#">Mettre à jour un appel d'offre</a>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">FORUM
+                        <span class="sr-only">(current)</span>
+                      </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuAgrement" data-toggle="dropdown" >Gestion des fichiers</a>
+                      <div class="dropdown-menu dropdown-primary dropdown-lg" aria-labelledby="navbarDropdownMenuAgrement">
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <h6 class="color-primary">Contrats</h6>
+                                </div>
+                                <div class="col-md-12 ">
+                                  <ul class="sub-title-menu">
+                                    <li><a class="dropdown-item" href="./clause_confidentialite.html">Clause de confidentialité</a></li>
+                                    <li><a class="dropdown-item" href="./contrat.html">Contrat et Annexe</a></li>
+                                    <li><a class="dropdown-item" href="./autre.html">Avenant</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6 border-left">
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <h6 class="color-primary">Documents</h6>
+                                </div>
+                                <div class="col-md-12 ">
+                                  <ul class="sub-title-menu">
+                                    <li><a class="dropdown-item" href="#">Catalogue</a></li>
+                                    <li><a class="dropdown-item" href="#">Facture</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuAgrement" data-toggle="dropdown" >Mon Compte</a>
+                      <div class="dropdown-menu dropdown-primary dropdown-lg" aria-labelledby="navbarDropdownMenuAgrement">
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <h6 class="color-primary">Paramêtres</h6>
+                                </div>
+                                <div class="col-md-12 ">
+                                  <ul class="sub-title-menu">
+                                    <li><a class="dropdown-item" href="./profil.html">Mes informations</a></li>
+                                    <li><a class="dropdown-item" href="./profil.html">Mes informations</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6 border-left">
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <h6 class="color-primary">Mes resultats</h6>
+                                </div>
+                                <div class="col-md-12 ">
+                                  <ul class="sub-title-menu">
+                                    <li><a class="dropdown-item" href="#">Agréments</a></li>
+                                    <li><a class="dropdown-item" href="#">Appel d'offres</a></li>
+                                    <li><a class="dropdown-item" href="#">Autre</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+              
+                  </ul>
+                  <!-- Links -->
+                </div>
+                <!-- Collapsible content -->
+              
+              </nav>
+            </div>
+            <div class="col-md-12 col-sm-12 p-5 half-heigth">
+              <div class="row">
+                <div class="flexbox allwidth flex-center">
+                    <div class="col-md-6 pt-4">
+                        <div class="card">
+                          <div class="card-header">
+                            <h4 class="color-primary">AO/RFP-2019N°00004</h4>
+                          </div>
+                          <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                              <p>APPEL D'OFFRE EQUIPEMENT DE CLIMIATISATION</p>
+                              <footer class="blockquote-footer">DATE DÉBUT : 31/07/2019</footer>
+                              <footer class="blockquote-footer">DATE FIN : 31/10/2019</footer>
+                            </blockquote>
+                            <button class="btn bg-color-primary waves-effect">POSTULER</button>
+                          </div>
+                          <div class="card-footer">
+                            <div class="flexbox flex-space-between">
+                              <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                              <p><i class="fas fa-thumbtack"></i> Biens</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+              </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <section class="container-fluid footer navbar-dark">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-6">
+          <h6>FAQ</h6>
+          <ul>
+            <li><a href="#">Nos sources</a></li>
+            <li><a href="#">Nos supports de publication</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6 border-left">
+          <h6>Contacter</h6>
+          <ul>
+            <li><a href="#">Vous souhaitez rechercher un avis</a></li>
+            <li><a href="#">Vous souhaitez publier un avis</a></li>
+            <li><a href="#">Nous contacter</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6 border-left">
+          <h6>Informations légales</h6>
+          <ul>
+            <li><a href="#">Conditions générales d’utilisation</a></li>
+            <li><a href="#">Mentions légales</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6 border-left">
+          <h6>La grande adresse des appels d’offres</h6>
+          <ul class="ul-share">
+            <li><a href="#"><i class="fab fa-facebook icon-link icon-fb"></i></a></li>
+            <li><a href="#"><i class="fab fa-google-plus icon-link icon-gl"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter icon-link icon-tw"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- implement jquery script -->
+    <script src="assets/js/jquery.js"></script>
+
+    <!-- implement font-awesome script -->
+    <script src="assets/js/all.js"></script>
+
+    <!-- implement popper script -->
+    <script src="assets/js/popper.js"></script>
+
+    <!-- implement bootsrap script -->
+    <script src="assets/js/bootstrap.js"></script>
+
+    <!-- implement material design script -->
+    <script src="assets/js/mdb.js"></script>
+
+    <!-- implement select autocomplete script -->
+    <script src="assets/js/jquery.betterdropdown.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.waypoints.js"></script>
+
+    <!-- implement accueil page script -->
+    <script src="assets/js/accueil.js"></script>
+</body>
+</html>

@@ -1,0 +1,707 @@
+<li class="step">
+    <div class="step-title waves-effect">Informations</div>
+    <div class="step-content">
+        <div class="card">
+            <div class="card-body">
+                <section id="package_contents">
+                    <div class="content-block">
+                        <div class="page-header">
+                            <h3>Informations Générales</h3>
+                        </div>
+                        <div class="page-content">
+                            <h3 class="Title-content">Essentielles</h3>
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">Dénomination</label>
+                                        <input type="text" class="form-control" name="denom" placeholder="Exple : ERK service" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">Groupe</label>
+                                        <input type="text" class="form-control" name="group" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">Filiale</label>
+                                        <input type="text" class="form-control" name="filiale" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label for="siege" class="text-primary">Pays du Siège</label>
+                                        <input list="pays_siege" name="pays_siege" class="form-control" value="Cote D'ivoire" type="text" id="siege">
+                                        <datalist id="pays_siege">
+                                        <option value="Cote D'ivoire"></option>
+                                        <option value="Burkina Faso"></option>
+                                        <option value="Mali"></option>
+                                        <option value="Benin"></option>
+                                        <option value="Togo"></option>
+                                        <option value="Ghana"></option>
+                                    </datalist>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label for="siege_v" class="text-primary">Ville du Siège</label>
+                                        <input list="ville_siege" name="ville_siege" class="form-control" value="Abidjan" type="text" id="siege_v">
+                                        <datalist id="ville_siege">
+                                        <option value="Abidjan"></option>
+                                        <option value="Ouagadougou"></option>
+                                        <option value="Bamako"></option>
+                                        <option value="Cotonou"></option>
+                                        <option value="Acra"></option>
+                                    </datalist>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">Adrèsse</label>
+                                        <input type="text" class="form-control" name="adress" placeholder="Avenue xx 25 zz y" />
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-7 col-sm-7">
+                                    <!-- Start Map Style1 -->
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254236.4308327302!2d-4.119952249478269!3d5.348965666598451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1ea5311959121%3A0x3fe70ddce19221a6!2sAbidjan!5e0!3m2!1sfr!2sci!4v1461119413162"
+                                        width="500" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                    <!-- End Map Style1 -->
+
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">Situation Géographique</label>
+                                        <input type="text" class="form-control" name="sit_geo" placeholder="Copie les informations du Google map" />
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">Téléphone</label>
+                                        <input type="tel" class="form-control" name="tel" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">Fax</label>
+                                        <input type="tel" class="form-control" name="fax" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">Email Société</label>
+                                        <input type="email" class="form-control" name="email_soci" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">Site Web Société</label>
+                                        <input type="text" class="form-control" name="site_soci" placeholder="http://www.site.com/" />
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">Capital Social</label>
+                                        <input type="number" class="form-control" name="capital" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">Capitaux Extérieur</label>
+                                        <input type="text" class="form-control" name="capito_ext" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label for="form_jur" class="text-primary">Forme Juridique</label>
+                                        <input list="list_form" name="forme" class="form-control" value="SA" type="text" id="form_jur">
+                                        <datalist id="list_form">
+                                        <option value="SA"></option>
+                                        <option value="SARL"></option>
+                                    </datalist>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">Date de Création Entreprise</label>
+                                        <input type="date" class="form-control" name="crea_entr" />
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">Objet Social</label>
+                                        <input type="text" class="form-control" name="objet" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">Immatriculation</label>
+                                        <input type="text" class="form-control" name="immatricu" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">Compte Contribuable</label>
+                                        <input type="text" class="form-control" name="compte_contr" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">Regime Fiscal</label>
+                                        <input type="text" class="form-control" name="regime_fisc" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">Centre D'imposition</label>
+                                        <input type="text" class="form-control" name="imposition" />
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">Etablissement Bancaire</label>
+                                        <input type="text" class="form-control" name="etabli_bnk" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label for="siege_bnk" class="text-primary">Pays de la Banque</label>
+                                        <input list="pays_siege_bnk" name="pays_bnk" class="form-control" value="Cote D'ivoire" type="text" id="siege_bnk">
+                                        <datalist id="pays_siege_bnk">
+                                        <option value="Cote D'ivoire"></option>
+                                        <option value="Burkina Faso"></option>
+                                        <option value="Mali"></option>
+                                        <option value="Benin"></option>
+                                        <option value="Togo"></option>
+                                        <option value="Ghana"></option>
+                                    </datalist>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label for="siege_v_bnk" class="text-primary">Ville de la Banque</label>
+                                        <input list="ville_siege_bnk" name="ville_siege_bnk" class="form-control" value="Abidjan" type="text" id="siege_v_bnk">
+                                        <datalist id="ville_siege_bnk">
+                                        <option value="Abidjan"></option>
+                                        <option value="Ouagadougou"></option>
+                                        <option value="Bamako"></option>
+                                        <option value="Cotonou"></option>
+                                        <option value="Acra"></option>
+                                    </datalist>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">Adrèsse de la Banque</label>
+                                        <input type="text" class="form-control" name="adress_bnk" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">Numero du Compte</label>
+                                        <input type="text" class="form-control" name="num_compte" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">RIB</label>
+                                        <input type="text" class="form-control" name="rib" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">IBAN</label>
+                                        <input type="text" class="form-control" name="iban" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">SWIFT</label>
+                                        <input type="text" class="form-control" name="swift" />
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="step-actions">
+            <button type="button" class="waves-effect waves-dark btn-flat color-primary previous-step">Retour</button>
+            <button type="button" class="waves-effect waves-dark btn next-step bg-color-primary">CONTINUE</button>
+        </div>
+    </div>
+</li>
+<li class="step">
+    <div class="step-title waves-effect">Ressource Humaine</div>
+    <div class="step-content">
+        <div class="card">
+            <div class="card-body">
+                <section id="template_structure">
+                    <div class="content-block">
+                        <div class="page-header">
+                            <h3>Réssource Humaine</h3>
+                        </div>
+                        <div class="page-content">
+                            <h4 class="Title-content">Essentielles</h4>
+                            <div class="row">
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">Nombre de Salariés</label>
+                                        <input type="number" min="0" class="form-control" name="nbr_salarie" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">Nombre de Cadre</label>
+                                        <input type="number" min="0" class="form-control" name="nbr_cadre" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">Nombre de Salariés CNPS</label>
+                                        <input type="number" min="0" class="form-control" name="nbr_salarie_cnps" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">Nombre de Salariés CDI</label>
+                                        <input type="number" min="0" class="form-control" name="nbr_salarie_cdi" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">Nombre de Salariés CDD</label>
+                                        <input type="number" min="0" class="form-control" name="nbr_salarie_cdd" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">Nbre Travailleur Temporaire</label>
+                                        <input type="number" min="0" class="form-control" name="nbr_salarie_tempo" />
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">% de Salariés CDI</label>
+                                        <input type="number" step="0.01" min="0" class="form-control" name="per_salarie_cdi" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">% de Salariés CDD</label>
+                                        <input type="number" step="0.01" min="0" class="form-control" name="per_salarie_cdd" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">% de Salariés Temporaire</label>
+                                        <input type="number" step="0.01" min="0" class="form-control" name="per_salarie_tempo" />
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">Moyenne des Anciens</label>
+                                        <input type="number" step="0.01" min="0" class="form-control" name="moy_ancien" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">Moyenne d'âges</label>
+                                        <input type="number" step="0.01" min="0" class="form-control" name="moy_age" />
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">Taux (TURN OVER)</label>
+                                        <input type="number" step="0.01" min="0" class="form-control" name="taux" />
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="step-actions">
+            <button type="button" class="waves-effect waves-dark btn-flat color-primary previous-step">Retour</button>
+            <button type="button" class="waves-effect waves-dark btn next-step bg-color-primary">CONTINUE</button>
+        </div>
+    </div>
+</li>
+<li class="step">
+    <div class="step-title waves-effect">Postion Commerciale</div>
+    <div class="step-content">
+        <div class="card">
+            <div class="card-body">
+                <section id="html_structure">
+                    <div class="content-block">
+                        <div class="page-header">
+                            <h3>Position Commerciale</h3>
+                        </div>
+                        <div class="page-content">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">Activité Primaire</label>
+                                        <input type="text" class="form-control" name="activit_p" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">Activité Secondaire</label>
+                                        <input type="text" class="form-control" name="activit_s" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">Marques</label>
+                                        <input type="text" class="form-control" name="marques" />
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">Nbre Réference</label>
+                                        <input type="number" class="form-control" name="nbr_ref" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">Service Après vente</label>
+                                        <div class="radio">
+                                            <div class="form-group">
+                                                <label>
+                                                    <input type="radio" name="serv_after_sell" id="oui" value="1" checked /> Oui</label>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>
+                                                    <input type="radio" name="serv_after_sell" id="non" value="0" /> Non</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">Dimenssion</label>
+                                        <input type="text" class="form-control" name="dimenssion" />
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">Réference Commerciale</label>
+                                        <input type="text" class="form-control" name="ref_com" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-8 col-sm-8">
+                                    <div class="row">
+                                        <label class="text-primary">Etes vous ?</label>
+                                        <div class="col-md-12">
+                                            <div class="custom-control custom-checkbox custom-control-inline">
+                                                <input type="checkbox" class="custom-control-input" name="etes_vous[]" id="1" value="Fabriquant" checked>
+                                                <label class="custom-control-label" for="1">Fabriquant</label>
+                                            </div>
+
+                                            <div class="custom-control custom-checkbox custom-control-inline">
+                                                <input type="checkbox" class="custom-control-input" name="etes_vous[]" id="2" value="Distributeur agréé">
+                                                <label class="custom-control-label" for="2">Distributeur agréé</label>
+                                            </div>
+
+                                            <div class="custom-control custom-checkbox custom-control-inline">
+                                                <input type="checkbox" class="custom-control-input" name="etes_vous[]" id="3" value="Distributeur">
+                                                <label class="custom-control-label" for="3">Distributeur</label>
+                                            </div>
+
+                                            <div class="custom-control custom-checkbox custom-control-inline">
+                                                <input type="checkbox" class="custom-control-input" name="etes_vous[]" id="4" value="Sous-traitant">
+                                                <label class="custom-control-label" for="4">Sous-traitant</label>
+                                            </div>
+
+                                            <div class="custom-control custom-checkbox custom-control-inline">
+                                                <input type="checkbox" class="custom-control-input" name="etes_vous[]" id="5" value="Importateur">
+                                                <label class="custom-control-label" for="5">Importateur</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="md-form">
+                                                <input type="text" name="etes_vous[]" class="form-control">
+                                                <label for="inputMDEx">Autre (à precisé)</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label class="text-primary">Secteur d'activité</label>
+                                        <div class="radio">
+                                            <div class="form-group">
+                                                <label>
+                                                    <input type="radio" name="secteur" id="oui" value="1" checked /> Oui</label>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>
+                                                    <input type="radio" name="secteur" id="non" value="0" /> Non</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 col-sm-5">
+                                    <div class="form-group">
+                                        <label class="text-primary">Vos Clients</label>
+                                        <textarea rows="3" class="form-control" name="client"></textarea>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">Produit Service</label>
+                                        <input type="text" class="form-control" name="prod_serv" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">Réference Entreprise</label>
+                                        <input type="text" class="form-control" name="ref_entre" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label class="text-primary">Type de marcher</label>
+                                        <div class="radio">
+                                            <div class="form-group">
+                                                <label>
+                                                    <input type="radio" name="type" id="oui" value="1" checked /> Oui</label>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>
+                                                    <input type="radio" name="type" id="non" value="0" /> Non</label>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="text-primary">Lequel</label>
+                                                <input type="text" class="form-control" name="lequel" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 col-sm-5">
+                                    <div class="form-group">
+                                        <label class="text-primary">Organisation Commerciale</label>
+                                        <textarea class="form-control" name="orga_com"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="step-actions">
+            <button type="button" class="waves-effect waves-dark btn-flat color-primary previous-step">Retour</button>
+            <button type="button" class="waves-effect waves-dark btn next-step bg-color-primary">CONTINUE</button>
+        </div>
+    </div>
+</li>
+<li class="step">
+    <div class="step-title waves-effect">Chiffres d'Affire</div>
+    <div class="step-content">
+        <div class="card">
+            <div class="card-body">
+                <section id="css_styling">
+                    <div class="content-block">
+                        <div class="page-header">
+                            <h3>Chiffre D'Affaire</h3>
+                        </div>
+                        <div class="page-content">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="table-responsive table-bordered">
+                                        <table class="table table-striped">
+                                            <thead class="bg bg-warning">
+                                                <tr>
+                                                    <th>Année</th>
+                                                    <th>Chiffre d'Affaire</th>
+                                                    <th>Résultat Net</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="col-md-2 form-group" title="Année N">
+                                                        <input type="number" readonly name="N[]" class="form-control" value="<?php echo date('Y');?>"></td>
+                                                    <td><input type="number" name="ca[]" class="form-control" value=""></td>
+                                                    <td><input type="number" name="res_net[]" class="form-control" value=""></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="col-md-2 form-group" title="Année N - 1">
+                                                        <input type="number" readonly name="N[]" class="form-control" value="<?php echo date('Y') - 1;?>"></td>
+                                                    <td><input type="number" name="ca[]" class="form-control" value=""></td>
+                                                    <td><input type="number" name="res_net[]" class="form-control" value=""></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="col-md-2 form-group" title="Année N - 2">
+                                                        <input type="number" readonly name="N[]" class="form-control" value="<?php echo date('Y') - 2;?>"></td>
+                                                    <td><input type="number" name="ca[]" class="form-control" value=""></td>
+                                                    <td><input type="number" name="res_net[]" class="form-control" value=""></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="step-actions">
+            <button type="button" class="waves-effect waves-dark btn-flat color-primary previous-step">Retour</button>
+            <button type="button" class="waves-effect waves-dark btn next-step bg-color-primary">CONTINUE</button>
+        </div>
+    </div>
+</li>
+<li class="step">
+    <div class="step-title waves-effect">Contacts</div>
+    <div class="step-content">
+        <div class="card">
+            <div class="card-body">
+                <section id="js_structure">
+                    <div class="content-block">
+                        <div class="page-header">
+                            <h3>Contacts</h3>
+                        </div>
+                        <div class="page-content">
+                            <h4 class="Title-content">Différents Responsables</h4>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="table-responsive table-bordered">
+                                        <table class="table table-striped">
+                                            <thead class="bg bg-success">
+                                                <tr>
+                                                    <th>Titre</th>
+                                                    <th>Nom</th>
+                                                    <th>Prénoms</th>
+                                                    <th>Contact</th>
+                                                    <th>Email</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><input type="text" name="titre_cnt[]" readonly value="Président" class="form-control"></td>
+                                                    <td><input type="text" name="nom_cnt[]" class="form-control"></td>
+                                                    <td><input type="text" name="prenoms_cnt[]" class="form-control" value=""></td>
+                                                    <td><input type="tel" name="tel_cnt[]" class="form-control"></td>
+                                                    <td><input type="email" name="email_cnt[]" class="form-control"></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="text" name="titre_cnt[]" readonly value="Directeur Général" class="form-control"></td>
+                                                    <td><input type="text" name="nom_cnt[]" class="form-control"></td>
+                                                    <td><input type="text" name="prenoms_cnt[]" class="form-control" value=""></td>
+                                                    <td><input type="tel" name="tel_cnt[]" class="form-control"></td>
+                                                    <td><input type="email" name="email_cnt[]" class="form-control"></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="text" name="titre_cnt[]" readonly value="Directeur Commercial" class="form-control"></td>
+                                                    <td><input type="text" name="nom_cnt[]" class="form-control"></td>
+                                                    <td><input type="text" name="prenoms_cnt[]" class="form-control" value=""></td>
+                                                    <td><input type="tel" name="tel_cnt[]" class="form-control"></td>
+                                                    <td><input type="email" name="email_cnt[]" class="form-control"></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="text" name="titre_cnt[]" readonly value="Personne à contacter pour le règlement" class="form-control"></td>
+                                                    <td><input type="text" name="nom_cnt[]" class="form-control"></td>
+                                                    <td><input type="text" name="prenoms_cnt[]" class="form-control" value=""></td>
+                                                    <td><input type="tel" name="tel_cnt[]" class="form-control"></td>
+                                                    <td><input type="email" name="email_cnt[]" class="form-control"></td>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="step-actions">
+            <button type="button" class="waves-effect waves-dark btn-flat color-primary previous-step">Retour</button>
+            <button type="button" class="waves-effect waves-dark btn next-step bg-color-primary">CONTINUE</button>
+        </div>
+    </div>
+</li>

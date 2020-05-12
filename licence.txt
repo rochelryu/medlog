@@ -1,0 +1,397 @@
+﻿Programme d'installation à partir de MS-DOS ou passez votre pilote d'affichage en mode VGA.
+
+Mise à niveau ou installation complète de Windows 98. Si vous disposez de la version de mise à niveau de Windows 98, le programme d'installation tente de trouver un produit de mise à niveau correspondant dans votre système. S'il ne parvient pas à trouver une version antérieure de Windows, vous êtes invité à insérer votre support antérieur afin de prouver la compatibilité.
+
+Espace disque nécessaire pour Windows 98. De nombreux facteurs entrent en ligne de compte dans le calcul de la quantité d'espace disponible nécessaire à Windows 98. Par conséquent, les chiffres donnés ci-dessous ne sont que des estimations fondées sur des installations standard de Windows 98.
+
+Mise à niveau standard à partir de Windows 95 :
+
+Nécessite environ 195 Mo d'espace disque disponible. En fonction de la configuration du système et des options d'installation choisies, l'espace nécessaire peut aller de 120 Mo à 295 Mo.
+
+Installation complète de Windows 98 sur un lecteur FAT16 :
+
+Nécessite 225 Mo d'espace disque disponible. En fonction de la configuration du système et des options d'installation choisies, l'espace nécessaire peut aller de 165 Mo à 355 Mo.
+
+Installation complète de Windows 98 sur un lecteur FAT32 :
+
+Nécessite 175 Mo d'espace disque disponible. En fonction de la configuration du système et des options d'installation choisies, l'espace nécessaire peut aller de 140 Mo à 255 Mo.
+
+Si vous n'installez pas Windows 98 sur le lecteur C, le programme d'installation requiert jusqu'à 25 Mo d'espace disque disponible sur le lecteur C pour les fichiers système et les fichiers journaux créés au cours de l'installation.
+
+Désinstallation :
+
+Si vous souhaitez sauvegarder votre ancienne version de Windows 95 avant d'effectuer la mise à niveau, vous pouvez choisir l'option de sauvegarde des fichiers système au cours de l'installation. Cela vous permet de désinstaller Windows 98 en cas de problème. Toutefois, cette sauvegarde ne peut pas être effectuée dans les cas suivants :
+
+    Vous installez Windows sur un lecteur compressé.
+    Vous effectuez l'installation dans un nouveau répertoire ou vous ne disposez pas d'une version antérieure.
+    Vous exécutez une version de MS-DOS antérieure à la version 5.0. 
+
+CRÉEZ UNE NOUVELLE DISQUETTE DE DÉMARRAGE ! En raison des changements intervenus au niveau des noyaux mode réel et mode protégé pour prendre en charge le système FAT32, les disquettes de démarrage de Windows 98 ne sont pas compatibles avec les versions antérieures de Windows. Par conséquent, lors de la première installation de Windows 98, vous devez absolument créer une nouvelle disquette de démarrage, MÊME SI VOUS N'ENVISAGEZ PAS D'UTILISER LE SYSTÈME FAT32.
+Gestionnaire de programmes de Windows 3.x.
+Le Gestionnaire de programmes (Progman.exe) n'est plus pris en charge sous Windows 98. Il reste présent dans le système à des fins de résolution de problèmes, mais il ne contient aucun groupe. En outre, si vous effectuez une mise à niveau à partir de Windows 95, vos fichiers .grp existants seront supprimés. En effet, ces fichiers posent problème lors de l'installation de Windows 98. Si vous effectuez une mise à niveau à partir de Windows 3.x, vos fichiers .grp sont conservés et certaines fonctionnalités du Gestionnaire de programmes seront toujours utilisables. Si vous avez l'intention d'utiliser le Gestionnaire de programmes, vous devez sauvegarder le fichier Progman.ini ainsi que vos fichiers *.grp avant d'effectuer la mise à niveau vers Windows 98.
+INSTALLATION DE WINDOWS 98 À PARTIR DE MS-DOS
+Si vous utilisez un nouveau disque dur ou un disque dur vierge ou si vous rencontrez des problèmes lors de l'exécution du programme d'installation à partir de votre version antérieure de Windows, exécutez le programme d'installation de Windows 98 à partir de MS-DOS. Bien que cette méthode d'installation soit la plus lente, elle est aussi la plus sûre et elle doit être utilisée lorsque les autres types d'installation ne fonctionnent pas.
+
+Touches de raccourci d'amorçage MS-DOS :
+
+Il existe différentes façons d'amorcer votre système à partir d'une invite de commande MS-DOS de manière fiable. La méthode la plus simple consiste à utiliser les touches de raccourci suivantes :
+
+    Windows 98 :
+
+    Maintenez la touche CTRL enfoncée pendant l'amorçage de votre ordinateur. Le menu d'amorçage de Windows 98 s'affiche directement. (Vous pouvez toujours utiliser la touche F8, mais l'invite « Démarrage de Windows 98 » ne s'affiche pas dans Windows 98 et il est donc difficile de savoir quand appuyer sur cette touche).
+    Windows 95 :
+
+    Appuyez sur la touche F8 lorsque l'invite « Démarrage de Windows 95 » s'affiche. Le menu d'amorçage de Windows 95 s'affiche.
+    MS-DOS 6.x :
+
+    Appuyez sur la touche F8 lorsque l'invite « Démarrage de MS-DOS » s'affiche. Cela vous permet de choisir manuellement les pilotes à charger et les fichiers système à ignorer.
+    Pilotes mode réel de CD-ROM :
+
+    Pour accéder au CD-ROM de Windows 98, vous devez disposer de pilotes mode réel de CD-ROM chargés. Si vous avez déjà exécuté le programme d'installation de Windows 98 et que vous aviez créé une disquette de démarrage, vous pouvez utiliser les pilotes de CD-ROM qui se trouvent sur cette disquette. Si vous n'avez pas de disquette de démarrage, vous devez exécuter le programme d'installation fourni avec votre matériel de CD-ROM.
+
+    Une fois que vous avez accès à votre lecteur de CD-ROM, basculez sur le lecteur contenant le CD-ROM de Windows 98 et tapez INSTALL. Le programme d'installation doit s'exécuter. 
+
+Conseils pour l'installation de pilotes mode réel de CD-ROM
+Exécution de Windows 95 :
+
+Si vous exécutez Windows 95, une partie des pilotes de CD-ROM est peut-être déjà chargée. Si vous pouvez fermer Windows 95, passer en mode MS-DOS et accéder à votre lecteur de CD-ROM, essayez la procédure suivante :
+
+    Réamorcez et appuyez sur la touche F8 lorsque l'invite « Démarrage de Windows 95 » s'affiche.
+    Choisissez « Invite MS-DOS seulement ».
+    À l'invite C:\, tapez DosStart.bat. DosStart.bat. 
+
+Vous devez maintenant avoir accès à votre lecteur de CD-ROM.
+Perte de l'accès au lecteur de CD-ROM lors de l'installation
+Si vous perdez l'accès à votre lecteur de CD-ROM lors de l'installation de Windows 98, essayez la procédure suivante :
+
+    Réamorcez et appuyez sur la touche F8 lorsque l'invite « Démarrage de Windows 95 » s'affiche. Choisissez l'option Ligne de commande. Si vous exécutez MS-DOS, amorcez directement à partir de la ligne de commande.
+    Modifiez le fichier Autoexec.bat en tapant : Edit Autoexec.bat
+    Supprimez la mention « Rem by Windows 98 Setup » devant la ligne qui fait référence au fichier Mscdex.exe.
+    Quittez le mode édition en tapant ALT-F-X et enregistrez le fichier lorsque vous y êtes invité.
+    Réamorcez. Soit le programme d'installation se poursuit de lui-même, soit vous devez le réexécuter en choisissant Récupération sans incident si vous y êtes invité. 
+
+Exécution du programme d'installation de Windows 98 à partir de votre disque dur
+Pour éviter la plupart des problèmes liés à la copie des fichiers et aux E/S disque, vous pouvez copier tous les fichiers du programme d'installation sur votre disque dur et effectuer l'installation à partir de votre disque dur. Vous pouvez décharger vos pilotes de CD-ROM et libérer de la mémoire conventionnelle afin d'éviter les problèmes de mémoire susceptibles de se produire au cours de ce type d'installation. Pour copier les fichiers du programme d'installation sur votre disque local :
+
+À partir de Windows 95 :
+
+    Libérez 195 Mo d'espace disque, en plus de l'espace requis par le programme d'installation. Pour une mise à niveau à partir de Windows 95, le programme d'installation nécessite généralement 165 Mo.
+    Créez un dossier temporaire pour stocker les fichiers du programme d'installation sur votre lecteur.
+    Copiez le contenu du dossier Win98 du CD-ROM de Windows 98 dans ce dossier temporaire. Vous pouvez également copier les sous-dossiers Win98, mais cela n'est pas indispensable si vous manquez d'espace disque.
+    Réamorcez. Appuyez sur la touche F8 lorsque l'invite « Démarrage de Windows 95 » s'affiche et choisissez Invite MS-DOS en mode sans échec seulement.
+    Basculez vers le dossier temporaire contenant les fichiers du programme d'installation de Windows 98, puis tapez INSTALL. 
+
+À partir de MS-DOS :
+
+    Assurez-vous que vous avez accès à votre lecteur de CD-ROM. Voir plus haut pour plus d'informations.
+    Libérez 195 Mo d'espace disque, en plus de l'espace requis par le programme d'installation. Pour une mise à niveau à partir de Windows 95, le programme d'installation nécessite généralement 165 Mo.
+    Créez un dossier temporaire sur le lecteur, avec une quantité d'espace disponible suffisante pour stocker les fichiers du programme d'installation. Pour créer un répertoire temporaire, basculez vers la lettre correspondant au lecteur souhaité, puis tapez MD Win98tmp.
+    Basculez vers le lecteur de CD-ROM Windows 98 et vers le répertoire Win98 en tapant : <lettre de lecteur>\Win98.
+    Copiez les fichiers du programme d'installation de Windows 98 dans votre répertoire temporaire en tapant Copy *.* <lettre de lecteur>\Win98tmp
+    Une fois tous les fichiers copiés, redémarrez votre système et effectuez un démarrage propre en ignorant vos fichiers de démarrage. Pour plus d'informations, consultez la section « Effectuer un démarrage propre ».
+    Basculez vers le répertoire temporaire dans lequel vous venez de copier les fichiers et lancez le programme d'installation en tapant INSTALL. 
+
+Effectuer un démarrage propre :
+
+Les pilotes de périphériques, utilitaires ou autres programmes de constructeurs tiers peuvent empêcher le bon déroulement de l'installation. Un démarrage propre de votre système peut résoudre la plupart de ces problèmes. Pour effectuer un démarrage propre, vous pouvez :
+
+Utiliser une disquette pour démarrer votre ordinateur :
+
+    Amorçage à partir d'une disquette de démarrage Windows 98. Cette disquette permet de déterminer si vous souhaitez ou non charger les pilotes de CD-ROM et offre un environnement propre pour l'exécution du programme d'installation. 
+
+Amorçage à partir d'une ancienne disquette de démarrage Windows 95 ou MS-DOS. Cela ne vous donne pas accès aux pilotes de CD-ROM, mais vous pouvez utiliser cette disquette si vous copiez les fichiers du programme d'installation sur votre disque dur, comme indiqué ci-dessus.
+
+Utiliser l'option Invite MS-DOS en mode sans échec seulement de Windows 95 :
+
+    Amorcez votre système et maintenez la touche F8 enfoncée lorsque l'invite « Démarrage de Windows 95 » s'affiche.
+    Choisissez Invite MS-DOS en mode sans échec seulement. Cela ne vous donne pas accès au lecteur de CD-ROM, mais vous pouvez utiliser cette option si vous copiez les fichiers du programme d'installation sur votre disque dur, comme indiqué ci-dessus. 
+
+Utiliser Confirmation pas-à-pas de Windows 98 :
+
+Si vous souhaitez charger certains pilotes manuellement, procédez de la manière suivante :
+
+    Amorcez votre système et maintenez la touche F8 enfoncée lorsque l'invite « Démarrage de Windows 95 » s'affiche.
+    Choisissez l'option Confirmation pas-à-pas.
+    Choisissez Oui pour les périphériques que vous souhaitez charger. Dans la plupart des cas, vous devez choisir Oui pour Himem.sys. 
+
+Démarrage propre de Windows 95/MS-DOS avec davantage de mémoire :
+
+Vous pouvez augmenter la mémoire disponible en modifiant votre fichier Config.sys de la manière indiquée ci-dessous. Vous pouvez également apporter ces modifications à votre disquette de démarrage.
+
+REMARQUE : ce sont les seuls pilotes que vous devez charger.
+
+   Device=Himem.sys
+   Device=EMM386.exe noems
+   Dos=high,umb
+   Device=drvspace.sys /move (Optional - only if using DriveSpace compression)
+
+
+Création d'une disquette de démarrage Windows 98
+
+Si le programme d'installation de Windows 98 échoue après avoir copié la plupart des fichiers sur votre disque dur, vous pouvez peut-être créer une disquette de démarrage à l'aide de l'utilitaire bootdisk.bat.
+
+    Amorcez sur une invite MS-DOS.
+    Basculez vers le répertoire Windows\command.
+    Exécutez le programme Bootdisk.bat. Il vous invite à créer une disquette de démarrage. 
+
+Cette disquette contient des pilotes mode réel de CD-ROM génériques qui vous seront utiles lors de la prochaine exécution du programme d'installation.
+LOGICIELS ANTIVIRUS
+Vérifiez qu'aucun programme antivirus ne s'exécute pendant que vous installez Windows 98. Si le programme en cause est de type TSR (programme résident), supprimez toutes les références associées dans vos fichiers Autoexec.bat, Config.sys et Win.ini.
+
+Si votre BIOS possède une protection antivirus intégrée, désactivez-la avant d'exécuter le programme d'installation. Pour ce faire, vous pouvez utiliser le programme d'installation CMOS du BIOS. Pour plus d'informations, consultez la documentation de votre ordinateur.
+
+Vous trouverez ci-dessous des commentaires relatifs à quelques programmes antivirus particuliers.
+
+Protection antivirus CMOS/BIOS :
+
+Certains systèmes disposent de fonctionnalités antivirus intégrées. Si cette option est activée, vous recevez un avertissement concernant des modifications « Virus-like Activity » ou « Master Boot Record Changed ». Vous devez laisser ces modifications se faire. Si vous choisissez de rétablir les paramètres précédents, vous risquez de ne plus pouvoir amorcer votre système.
+
+Norton AntiVirus :
+
+Si Norton AntiVirus est installé, l'avertissement suivant s'affichera peut-être à la fin de la procédure initiale de copie de fichiers :
+
+   Application Wininst0.400\Suwin.exe is attempting to update the Master
+   Boot Record
+
+
+Pour que l'installation se termine correctement, vous devez choisir Continue (C). Si vous ne laissez pas ces modifications se faire, le programme d'installation risque de ne plus répondre.
+
+Dr. Solomon's AntiVirus :
+
+Si vous exécutez l'utilitaire Dr. Solomon's AntiVirus, vous obtiendrez peut-être une erreur fatale écran bleu dans Ios.vxd lors de la création d'une disquette de démarrage au cours de l'installation. Cliquez sur Annuler dans l'écran relatif à la disquette de démarrage lorsque l'indicateur de progression affiche 20 %. Cela permet de poursuivre l'installation. Pour résoudre ce problème, procurez-vous une mise à jour du logiciel Dr. Solomon's AntiVirus sur le site Web correspondant.
+DÉTECTION ET RÉSOLUTION DES PROBLÈMES DE DISQUE DUR AU COURS DE L'INSTALLATION (AVEC SCANDISK)
+Détection des problèmes au cours de l'installation de Windows 98 :
+
+La version de ScanDisk exécutée par le programme d'installation détecte uniquement les erreurs. Elle ne les résout pas. Si des problèmes surviennent, le programme d'installation ne peut pas se poursuivre tant que ces problèmes ne sont pas résolus. Pour résoudre ces problèmes, quittez le programme d'installation et exécutez ScanDisk à partir de Windows 95 ou de MS-DOS. Pour plus d'informations sur l'utilisation de ScanDisk pour résoudre ces problèmes, consultez les sections ci-dessous.
+
+Réparation des problèmes de disque dur :
+
+Si, au cours de l'installation, vous recevez un message vous demandant d'exécuter ScanDisk pour résoudre les problèmes de votre disque dur, respectez la procédure suivante.
+
+    Si vous installez Windows 98 par-dessus MS-DOS ou une version précédente de Windows, par exemple Windows 3.1 :
+
+        Quittez Windows.
+        Si vous effectuez l'installation à partir de disquettes, insérez la disquette d'installation numéro 1 dans le lecteur de disquettes, puis tapez la commande suivante à l'invite de commande :
+
+        a:scandisk.exe /all
+
+        où « a » désigne le lecteur contenant la disquette Windows.
+        Si vous effectuez l'installation à partir d'un CD, insérez ce dernier, puis tapez la commande suivante à l'invite de commande :
+
+        d:\win98\scandisk.exe /all
+
+        où « d » désigne le lecteur contenant le CD.
+        Suivez les instructions qui s'affichent à l'écran, puis réparez les problèmes détectés par ScanDisk.
+        Démarrez Windows et réexécutez le programme d'installation. 
+    Si vous installez Windows 98 par-dessus une version précédente de Windows 98 ou de Windows 95 :
+
+        Quittez le programme d'installation.
+        Dans le menu Démarrer, pointez sur Programmes, sur Accessoires, sur Outils système, puis cliquez sur ScanDisk.
+        Examinez tous les disques durs et lecteurs hôtes installés sur votre ordinateur et corrigez tous les problèmes détectés. Vous devez effectuer une analyse de surface complète sur tous vos lecteurs, sinon le programme d'installation risque de détecter encore des erreurs. 
+
+Problèmes liés à l'exécution de ScanDisk :
+
+Dans certains cas, ScanDisk peut ne pas parvenir à résoudre un problème ou bien être à l'origine d'erreurs.
+
+    Vous exécutez la compression DriveSpace 3 :
+
+    Si la compression DrvSpace 3 est installée sur votre système, vous manquez peut-être de mémoire conventionnelle. Pour libérer de la mémoire, procédez de la manière suivante :
+
+        Si vous exécutez MS-DOS 6.x, vous pouvez exécuter Memmaker.exe pour libérer suffisamment d'espace pour l'exécution de ScanDisk.
+        Consultez la section « Installation de Windows 98 à partir de MS-DOS » pour savoir comment effectuer un démarrage propre avec davantage de mémoire.
+        Vérifiez vos lecteurs pendant l'exécution de Windows 95. 
+
+Si la mémoire n'est toujours pas suffisante ou si vous rencontrez d'autres problèmes liés à l'exécution de ScanDisk, vous pouvez exécuter le programme d'installation sans ScanDisk en utilisant l'option /IS. Pour ce faire, tapez la commande suivante :
+
+install /is
+
+REMARQUE : il n'est pas recommandé d'évincer ScanDisk de la procédure d'installation. En effet, votre disque dur peut présenter des problèmes qui empêchent Windows 98 de s'installer ou de s'exécuter correctement.
+DÉSINSTALLATION DE WINDOWS 98
+Enregistrement des fichiers système :
+
+Le programme d'installation de Windows 98 vous offre la possibilité de sauvegarder votre version antérieure de Windows, au cas où Windows 98 devrait être réinstallé ultérieurement. Pour activer cette option, sélectionnez l'option de sauvegarde des fichiers système lorsque vous y êtes invité au cours de l'installation. Le programme d'installation crée alors les fichiers cachés suivants, nécessaires à la désinstallation de Windows 98 :
+
+    Winundo.dat
+    Winundo.ini
+    Winlfn.ini
+
+REMARQUE : si vous supprimez ces fichiers, vous ne pouvez plus désinstaller Windows 98.
+
+Si vous vous trouvez dans un des cas suivants, vous ne pouvez pas désinstaller Windows 98 et le programme d'installation ne vous propose pas d'enregistrer les fichiers système :
+
+    Vous installez Windows sur un lecteur compressé.
+    Vous effectuez l'installation dans un nouveau répertoire ou vous ne disposez pas d'une version antérieure.
+    Vous exécutez une version de MS-DOS antérieure à la version 5.0. 
+
+REMARQUE : les fichiers nécessaires à la désinstallation de Windows 98 doivent être enregistrés sur un disque dur local. Vous ne pouvez pas les stocker sur un lecteur réseau ou une disquette. Si vous avez plusieurs lecteurs locaux disposant de suffisamment de mémoire disponible, vous pouvez sélectionner celui de votre choix pour enregistrer les informations de désinstallation.
+
+Il existe un certain nombre d'actions susceptibles d'empêcher la désinstallation de Windows 98 une fois le programme d'installation exécuté. Vous trouverez ci-dessous une liste des actions qui entraînent la suppression des informations de désinstallation du système :
+
+    Conversion de votre disque dur au format FAT32
+    Compression de votre disque dur à l'aide de DriveSpace
+
+REMARQUE : ces utilitaires doivent vous signaler que les informations de désinstallation seront perdues avant d'effectuer la conversion ou la compression.
+
+Désinstallation de Windows 98
+
+Pour désinstaller Windows 98 et restaurer complètement les versions précédentes de MS-DOS et de Windows 3.x ou Windows 95 :
+
+    Cliquez sur Démarrer, pointez sur Paramètres, puis cliquez sur Panneau de configuration.
+    Double-cliquez sur Ajout/Suppression de programmes.
+    Sous l'onglet Installation/Désinstallation, cliquez sur Pour désinstaller Windows 98, puis sur Ajouter/Supprimer. 
+
+Si vous avez des problèmes pour démarrer Windows 98, vous pouvez utiliser votre disquette de démarrage pour démarrer l'ordinateur et exécuter UNINSTAL à partir de cette disquette.
+
+REMARQUE : UNINSTAL doit arrêter Windows 98. Si cette opération pose un problème sur votre ordinateur, redémarrez-le et appuyez sur F8 lorsque vous voyez le message « Démarrage de Windows 98 ». Cliquez ensuite sur Invite MS-DOS seulement et exécutez UNINSTAL à partir de l'invite de commande.
+
+Si le programme d'installation ne se déroule pas normalement et si vous souhaitez restaurer les versions antérieures de MS-DOS et Windows 3.x ou Windows 95, vous pouvez exécutez UNINSTAL à partir du répertoire \Windows\Command sur votre disque dur ou à partir de votre disquette de démarrage.
+
+Si vous avez enregistré vos fichiers sur un lecteur autre que C, vous pouvez utiliser l'option /w pour spécifier le lecteur où ils se trouvent. Par exemple :
+
+uninstal /w e:
+
+où e: désigne le lecteur contenant vos anciens fichiers système.
+
+Si vous souhaitez supprimer les fichiers nécessaires à la désinstallation en cours d'exécution de Windows 98 pour libérer de l'espace disque, respectez la procédure suivante :
+
+    Cliquez sur Démarrer, pointez sur Paramètres, puis cliquez sur Panneau de configuration.
+    Double-cliquez sur Ajout/Suppression de programmes.
+    Sous l'onglet Installation/Désinstallation, cliquez sur Anciens fichiers système Windows 3.x/MS-DOS, puis sur Supprimer. Vous pouvez également cliquer sur Supprimer les fichiers système Windows 95 (Informations de désinstallation). 
+
+Vous ne pourrez plus désinstaller Windows 98.
+SI VOUS UTILISEZ UN LECTEUR COMPRESSÉ
+Si vous avez compressé votre disque dur, il se peut que vous receviez un message indiquant que l'espace disque est insuffisant dans la partition hôte du lecteur compressé. Le programme d'installation doit parfois copier certains fichiers sur votre lecteur de démarrage, l'hôte de votre lecteur de démarrage ou l'hôte de votre lecteur Windows. Si ce message s'affiche, libérez de l'espace sur le lecteur spécifié, puis réexécutez le programme d'installation. Essayez l'une des solutions suivantes :
+
+    Installez Windows sur un disque non compressé si possible.
+    Supprimez les fichiers inutiles de votre partition hôte.
+    Si vous exécutez Windows 3.1 et utilisez un fichier d'échange permanent, essayez d'en réduire la taille. Dans le Panneau de configuration, double-cliquez sur 386 Etendu, puis cliquez sur Mémoire virtuelle. Modifiez la taille de votre fichier d'échange.
+    Utilisez votre logiciel de compression de disque pour libérer de l'espace sur le lecteur hôte pour le lecteur compressé. Si vous avez compressé votre lecteur à l'aide de DriveSpace ou de DoubleSpace, procédez comme suit :
+        Quittez Windows.
+        Exécutez Drvspace.exe ou Dblspace.exe.
+        Sélectionnez le lecteur compressé correspondant à l'hôte où vous souhaitez libérer de l'espace.
+        Cliquez dans le menu Lecteur sur Ajuster l'espace libre et ajustez l'espace libre en fonction de vos besoins. 
+    Si vous avez compressé votre lecteur à l'aide de Windows 95 DriveSpace ou de Drvspace3 à partir de Microsoft Plus!, suivez la procédure indiquée ci-dessous :
+        Démarrez Windows.
+        Sélectionnez DriveSpace dans Démarrer/Programmes/Accessoires/Outils système/DriveSpace.
+        Sélectionnez le lecteur compressé correspondant à l'hôte où vous souhaitez libérer de l'espace.
+        Cliquez dans le menu Lecteur sur Ajuster l'espace libre et ajustez l'espace libre en fonction de vos besoins. 
+
+Si vous avez utilisé un logiciel de compression différent de DriveSpace ou DoubleSpace, Stacker par exemple, consultez la documentation correspondante.
+
+REMARQUE : il se peut que vous remarquiez un décalage entre la quantité d'espace libre signalée par le programme d'installation et votre propre évaluation de l'espace libre sur votre lecteur hôte. En effet, Windows utilise une certaine quantité d'espace pour créer un fichier d'échange et cet espace peut être considéré comme non alloué lorsque Windows ne s'exécute pas.
+
+REMARQUE : si vous créez une disquette de démarrage pendant l'exécution du programme d'installation, prenez garde de ne pas utiliser à cet effet un disque compressé.
+INSTALLATION DE WINDOWS 98 SUR UN SYSTÈME EXÉCUTANT WINDOWS NT
+Vous ne pouvez pas installer Windows 98 par-dessus une version de Windows NT, mais les deux systèmes peuvent coexister. Toutefois, pour des raisons de compatibilité, il est conseillé d'installer chaque système sur une partition ou un disque dur distincts. Si Windows NT est déjà installé, le programme d'installation de Windows 98 s'ajoute au menu d'amorçage de Windows NT pour permettre à l'utilisateur de choisir entre Windows 98 et Windows NT.
+
+Si vous ne pouvez plus amorcer Windows NT, vous devez amorcer à partir des disquettes de réparation de Windows NT et choisir l'option Réparer pour restaurer les fichiers d'amorçage Windows NT.
+
+Si vous installez Windows 98 sur un système dont les lecteurs ont été créés avec Windows NT, vous obtiendrez peut-être le message d'erreur suivant :
+
+« Le programme d'installation a détecté une partition FAT avec une taille de cluster supérieure à 64 Ko. Celle-ci n'est pas prise en charge par Scandisk et l'installation ne peut pas se poursuivre. Vous devez partitionner de nouveau votre disque avec une taille de cluster inférieure ou égale à 32 Ko et relancer le programme d'installation. »
+
+Exécutez le programme d'installation avec le paramètre « is » (par exemple, Install /is) pour ignorer ScanDisk et éviter ce problème.
+INSTALLATION DE WINDOWS 98 SUR UN SYSTÈME EXÉCUTANT OS/2
+Le programme d'installation ne fonctionne pas sur un système OS/2. Vous devez démarrer MS-DOS et exécuter le programme d'installation à partir de l'invite de commande.
+
+REMARQUE : si vous effectuez une mise à niveau à partir d'OS/2 sur une partition HPFS, vous devez garder votre disque OS/2 à portée de main pendant l'installation de Windows 98.
+
+Si vous démarrez MS-DOS à partir d'une disquette et exécutez ensuite le programme d'installation, vous ne pourrez plus démarrer OS/2 une fois Windows 98 installé. Il faut supprimer les fichiers Autoexec.bat et Config.sys utilisés par OS/2 avant d'exécuter le programme d'installation de Windows 98.
+
+Si vous souhaitez désinstaller OS/2 de votre ordinateur après avoir installé Windows 98 :
+
+    Sauvegardez les fichiers de données que vous souhaitez conserver sur une disquette ou un lecteur réseau.
+    Supprimez les fichiers de tous vos répertoires et sous-répertoires OS/2, puis supprimez les répertoires OS/2.
+    Dans Poste de travail ou dans l'Explorateur Windows, cliquez sur Affichage, sur Options des dossiers, puis sous l'onglet Affichage, cliquez sur Afficher tous les fichiers. Ensuite, supprimez les fichiers OS/2 suivants :
+
+          Ea data.sf
+          OS2ldr.msg
+          OS2krnl
+          OS2boot
+          Wp data.sf
+
+MESSAGES D'ERREUR DU PROGRAMME D'INSTALLATION
+Cette section répertorie quelques messages que vous pouvez recevoir pendant l'exécution du programme d'installation et indique la marche à suivre dans chaque cas.
+
+« Version précédente de Setupx.dll »
+
+Le programme d'installation signale qu'une version antérieure du fichier Setupx.dll ou NetDi.dll est utilisée. Cela peut se produire si certaines applications sont ouvertes sur votre ordinateur. Si vous souhaitez que le programme d'installation remplace le fichier existant et redémarre automatiquement le système, cliquez sur OK. Pour conserver votre version existante de Setupx.dll et NetDi.dll, cliquez sur Annuler pour quitter le programme d'installation, fermez les applications ouvertes, puis réexécutez le programme d'installation.
+
+Les programmes suivants peuvent provoquer cette erreur :
+
+    « In Control Tools » de Diamond
+    Pilotes de carte son Ensonics AudioPCI
+    Pilotes de carte son Aztech
+    Utilitaires de configuration Hayes Modem
+    Certains utilitaires du Système d'impression Windows (série Canon BJ)
+
+Si, après avoir redémarré, vous obtenez toujours la même erreur, exécutez le programme d'installation à partir de l'invite de commande MS-DOS. Pour plus d'informations, consultez la section « Installation de Windows 98 à partir de MS-DOS ».
+
+Message SU0018 :
+
+« Le programme d'installation ne peut pas créer de fichiers sur votre lecteur de démarrage MS-DOS et ne peut pas installer Windows 98.
+
+    La racine du lecteur de démarrage contient peut-être trop de fichiers 
+
+ou la lettre du lecteur de démarrage pourrait avoir été réassignée. »
+
+Le dossier racine d'un lecteur peut contenir jusqu'à 512 entrées (fichiers ou dossiers). Ce message indique que le programme d'installation a détecté un trop grand nombre d'entrées de répertoire dans le dossier racine de votre ordinateur et qu'il ne peut pas créer les fichiers nécessaires à l'installation de Windows 98. Déplacez ou supprimez certains fichiers du dossier racine de votre lecteur et réexécutez le programme d'installation.
+
+Ce message d'erreur peut également s'afficher si la lettre de votre lecteur de démarrage a été remappée. Cela peut se produire pour différentes raisons :
+
+    Vous avez mappé un lecteur réseau sur C. Dans ce cas, remappez ce lecteur réseau.
+    Votre fichier Config.sys contient l'argument LastDrive=C. Supprimez cet argument ou choisissez un autre lecteur.
+    Un programme de partitionnement ou de gestion d'amorçage d'un constructeur tiers a remappé le lecteur. Consultez la documentation de ce programme. Vous devrez peut-être désinstaller ce programme avant d'installer Windows 98. 
+
+« Erreur d'installation irrécupérable » :
+
+« Erreur d'installation irrécupérable. Le programme d'installation ne peut pas continuer avec cette configuration système. Cliquez sur OK pour quitter l'installation. » Cette erreur peut être provoquée par différentes conditions. Pour plus d'informations, consultez les sections « Remarques d'ordre général sur l'installation » et « Installation de Windows 98 à partir de MS-DOS ».
+
+« Noms de fichier longs » :
+
+Si vous obtenez le message « Le programme d'installation a détecté que le programme Noms de fichier longs est installé dans ce répertoire. L'installation ne peut continuer. », quittez le programme d'installation et supprimez les noms de fichier longs de votre ordinateur à l'aide de la fonctionnalité de désinstallation des noms de fichier longs. Pour plus d'informations, consultez la section « View Software ».
+
+Mémoire insuffisante :
+
+Si vous rencontrez un message de type « Mémoire insuffisante », vous pouvez augmenter la mémoire conventionnelle en plaçant les programmes résidents (TSR) en commentaire et en chargeant les pilotes de périphériques dans la zone supérieure de la mémoire. Pour plus d'informations sur la procédure à suivre, consultez l'article 134399, « Comment faire pour augmenter la mémoire conventionnelle des programmes MS-DOS » dans la Base de Connaissances Microsoft.
+
+Espace disque insuffisant :
+
+Vous pouvez récupérer de l'espace disque en exécutant l'une des procédures suivantes :
+
+    Cliquez avec le bouton droit sur la Corbeille, puis cliquez sur Vider la corbeille.
+    Supprimez le contenu du dossier cache de votre navigateur Internet.
+    Supprimez les fichiers présentant l'extension .bak ou .tmp.
+    Supprimez les dossiers des programmes que vous n'utilisez pas (en prenant soin de sauvegarder les données au préalable).
+    Supprimez l'ancien dossier MS-DOS, sauf si vous avez l'intention de configurer votre ordinateur pour qu'il exécute à la fois Windows 98 et MS-DOS (vérifiez que vous avez un disque de démarrage qui prend en charge l'accès prioritaire au lecteur de CD-ROM).
+    Supprimez le fichier caché Winundo.dat de l'installation précédente de Windows 95.
+    Supprimez l'ancien dossier Windows 3.1, sauf si vous avez l'intention de configurer votre ordinateur pour qu'il exécute à la fois Windows 3.1 et Windows 98. 
+
+Impossible d'écrire dans le répertoire temporaire :
+
+Ce message peut apparaître lorsqu'il n'y a pas suffisamment d'espace disque pour le dossier temporaire. Si vous disposez d'espace libre sur un autre lecteur, utilisez la ligne de commande suivante pour changer l'emplacement du répertoire temporaire :
+
+   Install /T:&lt;lettre de lecteur&gt;:\TEMP
+
+
+Si vous n'avez pas d'espace disponible sur un autre lecteur, libérez de l'espace sur votre disque dur, puis réexécutez le programme d'installation. Vous trouverez la liste des fichiers pouvant être supprimés dans la section sur les messages de type « Espace disque insuffisant », plus haut dans ce document.
+
+Messages d'erreur liés aux fichiers CAB :
+
+Les erreurs liées aux fichiers CAB ont le plus souvent les causes suivantes : virus, mémoire conventionnelle insuffisante, support défectueux ou problèmes matériels (liés aux lecteurs de CD-ROM notamment).
+
+Si vous avez déjà créé votre disquette de démarrage, quittez le programme d'installation, arrêtez votre ordinateur, insérez la disquette de démarrage, puis redémarrez l'ordinateur. Cette opération crée un environnement contrôlé pour le programme d'installation. Exécutez le programme d'installation à partir de l'invite de commande MS-DOS.
+
+À la suite d'un message d'erreur lié à un fichier CAB, essayez de copier les fichiers du programme d'installation sur votre disque dur et d'exécuter le programme d'installation à partir du disque dur, en procédant de la manière suivante :
+
+    Vous avez besoin de 200 Mo d'espace disponible supplémentaires sur votre disque dur et d'un répertoire temporaire pour stocker les fichiers.
+    Amorcez à partir de la disquette de démarrage de Windows 98 et choisissez de charger vos pilotes de CD-ROM. Si vous n'avez pas accès à votre lecteur de CD-ROM lorsque vous amorcez à partir de la disquette de démarrage de Windows 98, vous devez charger les pilotes fournis avec votre lecteur de CD-ROM.
+    Basculez vers la lettre du lecteur de CD-ROM indiquée par l'invite MSCD001 qui s'affiche à l'écran et placez-vous dans le dossier Win98. Tapez Copy *.* <lecteur de destination et dossier temporaire créé>
+    Placez-vous dans ce dossier et exécutez le programme d'installation, en choisissant Récupération sans incident si vous y êtes invité. 
+
+
+« Setup could not check the hard drives on your computer. »
+
+Si vous obtenez une de ces deux erreurs, le programme d'installation n'a pas réussi à exécuter ScanDisk pour vérifier vos disques durs. Ce problème peut être dû à un manque de mémoire conventionnelle ou à des erreurs du disque dur que ScanDisk ne peut pas résoudre lorsqu'il est exécuté à partir du programme d'installation. Pour éviter ces erreurs, réamorcez votre système en mode MS-DOS et exécutez Scandisk /all. Réexécutez le programme d'installation. S'il échoue encore, réamorcez en mode MS-DOS et exécutez Scandisk / all /surface. Cela prendra un peu plus de temps, mais vous serez sûr que vos disques sont en bon état. Si, après avoir exécuté ScanDisk avec ces options, le programme d'installation ne parvient toujours pas à continuer, exécutez Install /is pour ignorer ScanDisk.
+
+REMARQUE : il n'est pas conseillé d'ignorer ScanDisk et vous devez le faire uniquement si vous êtes certain que vos disques ne contiennent aucune erreur. Dans le cas contraire, le programme d'installation risque d'échouer et vous ne pourrez peut-être plus amorcer votre système. 

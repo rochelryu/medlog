@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10"><![endif]-->
+    <meta name="description" content="Portail Fournisseur de Gestion des Agrements et Appel d'Offre">
+    <meta name="author" content="Junior MAMADOU : s_co_2007@hotmail.fr">
+    <link rel="shortcut icon" href="style/images/favicon.png">
+    <title>IvoirusBuyer : Portail Fournisseur</title>
+    <!-- Bootstrap core CSS -->
+    <link href="style/css/style.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="style/js/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+	</head>
+<body>
+
+<!-- Start Loading -->
+
+<section class="loading-overlay">
+    <div class="Loading-Page">
+		<h2 class="loader">Loading...</h2>
+    </div>
+</section>
+
+ <!-- End Loading  -->
+
+<!-- Start Sidebar  -->
+
+<div class="menu-wrap">
+    <nav class="menu">
+        <div class="login-area side-nav-block">
+            <div class="title-sidebar">
+                <h2>Identification</h2>
+            </div>
+            <div class="login-controls">
+                <div class="input-box">
+                    <input type="text" name="name" class="txt-box " placeholder="User name">
+                </div>
+                <div class="input-box">
+                    <input type="password" name="pass" class="txt-box " placeholder="Password">
+                </div>
+                <div class="check-box">
+					<label class="lb-remember"><input name="rememberme" type="checkbox" id="rememberme" value="forever">Garder ma session</label>
+                    <a href="#">Mot de Passe Oublié?</a>
+                </div>
+                <div class="main-bg">
+                    <input type="submit" name="connexion" class="btn " value="Connexion">
+                </div>				
+                <div class="Sign-Up">
+                    <a href="#">Créer un Compte</a>
+                </div>
+            </div>
+		</div>	
+    </nav>
+    <button class="close-button" id="close-button">Cache le Menu</button>
+</div>
+
+
+<!-- End Sidebar  -->
+
+<div class="content-wrap">
+	<div id="home" class="body-wrapper">
+	
+		<!-- Start Section Header style1 -->
+		
+		<header id="header" class="header-style1">
+			<div id="header-main">
+				<!-- Start Section Top Header -->
+				<div class="top-header">
+					<div class="container">
+						<div class="row">
+							<div class="contact-text float-right">
+								<ul>
+									<li><span>Téléphone : </span> +(225) 000 00 000</li>
+									<span class="sep">|</span>
+									<li><span>Email : </span> portail-frs@Ivoiruss.com</li>
+								</ul>
+							</div>
+						 </div>
+					</div>
+				</div>
+				<!-- End Section Top Header -->
+				
+				<!-- Start Section Bottom Header -->
+				<div class="bottom-header">
+					<div class="Navbar-Header navbar basic" data-sticky="true">
+						<div class="container">
+							<div class="row">
+								<div class="container-header">
+									<div class="Logo-Header float-left">
+										<a class="navbar-logo" href="./"><img src="../style/images/logo/logo-construction.png" alt=""></a>
+									</div>
+									<div class="header-icon float-right">
+										<div class="site-icons-ul float-right">
+											<ul class="icons-ul">
+			<li class="sidebar-menu" title="Identification"><a href="#" id="open-button"></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- Start Navbar -->
+									<div class="navbar-header float-right">
+										<div id="cssmenu" class="Menu-Header top-menu">
+											<div class="menu-button"></div>
+											<ul class="flexnav one-page" data-breakpoint="992">
+						<li class="has-sub"><a href="../">Accueil</a></li>
+						<li class="has-sub"><a href="about.html">&Agrave; Propos</a></li>
+						<li class="has-sub"><a href="service.html">Services</a></li>
+						<li class="has-sub"><a href="contact.php">Contact</a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- End Navbar -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Section Bottom Header -->
+			</div>	
+			
+			<!-- Start Pages Title  -->
+			
+			<section id="Page-title" class="Page-title-Style1">
+				<div class="color-overlay"></div>
+				<div class="container inner-page-title">
+					<div class="inner-title-container">
+						<div class="row">
+							<div class="col-md-9 col-sm-9">
+								<div class="title-icon"><span class="icon icon-Ringer"></span></div><div class="title-text"><h2 class="page-title">Portail IBC</h2><h6>Fournisseurs</h6></div>
+							</div>
+							<div class="col-md-3 col-sm-3">                  
+								<div class="breadcrumb-trail breadcrumbs"><span class="trail-begin"><a href="#" title="Helmets">Accueil</a></span>
+									 <span class="sep">/</span> <span class="trail-end">IvoirusBuyer Consulting</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<!-- End Pages Title  -->
+		
+		</header>
+
+		<!-- End Section Header style1 -->
+
+		<!-- Start Our Why Us -->
+
+		<!-- Start welcome -->
+
+		<section id="Welcome" class="light-wrapper">
+			<div class="container inner">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="title-section text-center">
+							<p>Hello Dear</p>
+							<h3>Welcome To Helmets</h3>
+						</div>
+						<div class="description-welcome text-center">
+							<p>Helmets is a business theme which perfectly suited Construction company, Cleaning agency, Mechanic workshop and any kind of handyman business. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+						</div>
+					</div>
+				</div>		
+				<div class="divcod55"></div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-lg-3 col-md-3">
+						<div class="welcome_wrapper text-left">
+							<div class="number">01.</div>
+							<h5>The company</h5>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+							<a href="#">Read More</a>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-lg-3 col-md-3">
+						<div class="welcome_wrapper text-left">
+							<div class="number">02.</div>
+							<h5>Our History</h5>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+							<a href="#">Read More</a>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-lg-3 col-md-3">
+						<div class="welcome_wrapper text-left">
+							<div class="number">03.</div>
+							<h5>Our Mission</h5>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+							<a href="#">Read More</a>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-lg-3 col-md-3">
+						<div class="welcome_wrapper text-left">
+							<div class="number">04.</div>
+							<h5>Our Values</h5>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+							<a href="#">Read More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- End Our Welcome -->
+		
+		<!-- Start Our Projects -->
+
+		<section id="Projects" class="whitesmoke-wrapper">
+			<div class="container inner">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="title-section text-center">
+							<p>GREAT WORKS</p>
+							<h3>Our Gallery</h3>
+						</div>
+						<div class="description-welcome text-center">
+							<p>Helmets is a business theme which perfectly suited Construction company, Cleaning agency, Mechanic workshop and any kind of handyman business. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+						</div>
+					</div>
+				</div>			
+				<div class="divcod55"></div>
+				<div class="row">
+					<div class="gry-bg">
+						<ul id="filters">
+							<li class="active-link"><a href="#" class=" filter" data-filter="*">All</a></li>
+							<li><a href="#" class=" filter" data-filter="f1">Pipes Repairing</a></li>
+							<li><a href="#" class=" filter" data-filter="f2">Pipes Repairing</a></li>
+							<li><a href="#" class=" filter" data-filter="f3">Heaters Reapairing</a></li>
+							<li><a href="#" class=" filter" data-filter="f4">Other Works</a></li>
+						</ul>
+					</div>
+					<div class="divcod30"></div>
+					<div class="portfolio-items">
+						<div id="Projects-Slider" class="owl-carousel owl-theme">
+							<div class="portfolio-item" data-filter="f1">
+								<div class="projectItem">
+									<img src="style/images/portfolio/portfolio-1.jpg"  alt="portfolio" width="370" height="370" >
+									<div class="projectItem-hover">
+										<div class="projectItem-co">
+											<div class="Top-ProjectItem">
+												<p><a href="">Inerior Design</a>,<a href="">Branding</a></p>											
+											</div>
+											<div class="line-grid"></div>
+											<div class="Bootom-ProjectItem">
+												<h2>New Office Room</h2>
+												<a class="portfolio-zoom fancybox-effects-b hvr-icon-pop btn" href="style/images/portfolio/portfolio-1.jpg">View Project</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="portfolio-item" data-filter="f2">
+								<div class="projectItem">
+									<img src="style/images/portfolio/portfolio-2.jpg"  alt="portfolio" width="370" height="370" >
+									<div class="projectItem-hover">
+										<div class="projectItem-co">
+											<div class="Top-ProjectItem">
+												<p><a href="">Inerior Design</a>,<a href="">Branding</a></p>											
+											</div>
+											<div class="line-grid"></div>
+											<div class="Bootom-ProjectItem">
+												<h2>New Office Room</h2>
+												<a class="portfolio-zoom fancybox-effects-b hvr-icon-pop btn" href="style/images/portfolio/portfolio-2.jpg">View Project</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="portfolio-item" data-filter="f3">
+								<div class="projectItem">
+									<img src="style/images/portfolio/portfolio-3.jpg"  alt="portfolio" width="370" height="370" >
+									<div class="projectItem-hover">
+										<div class="projectItem-co">
+											<div class="Top-ProjectItem">
+												<p><a href="">Inerior Design</a>,<a href="">Branding</a></p>											
+											</div>
+											<div class="line-grid"></div>
+											<div class="Bootom-ProjectItem">
+												<h2>New Office Room</h2>
+												<a class="portfolio-zoom fancybox-effects-b hvr-icon-pop btn" href="style/images/portfolio/portfolio-3.jpg">View Project</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="portfolio-item" data-filter="f4">
+								<div class="projectItem">
+									<img src="style/images/portfolio/portfolio-4.jpg"  alt="portfolio" width="370" height="370" >
+									<div class="projectItem-hover">
+										<div class="projectItem-co">
+											<div class="Top-ProjectItem">
+												<p><a href="">Inerior Design</a>,<a href="">Branding</a></p>											
+											</div>
+											<div class="line-grid"></div>
+											<div class="Bootom-ProjectItem">
+												<h2>New Office Room</h2>
+												<a class="portfolio-zoom fancybox-effects-b hvr-icon-pop btn" href="style/images/portfolio/portfolio-4.jpg">View Project</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="portfolio-item" data-filter="f2">
+								<div class="projectItem">
+									<img src="style/images/portfolio/portfolio-1.jpg"  alt="portfolio" width="370" height="370" >
+									<div class="projectItem-hover">
+										<div class="projectItem-co">
+											<div class="Top-ProjectItem">
+												<p><a href="">Inerior Design</a>,<a href="">Branding</a></p>											
+											</div>
+											<div class="line-grid"></div>
+											<div class="Bootom-ProjectItem">
+												<h2>New Office Room</h2>
+												<a class="portfolio-zoom fancybox-effects-b hvr-icon-pop btn" href="style/images/portfolio/portfolio-1.jpg">View Project</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="portfolio-item" data-filter="f1">
+								<div class="projectItem">
+									<img src="style/images/portfolio/portfolio-3.jpg"  alt="portfolio" width="370" height="370" >
+									<div class="projectItem-hover">
+										<div class="projectItem-co">
+											<div class="Top-ProjectItem">
+												<p><a href="">Inerior Design</a>,<a href="">Branding</a></p>											
+											</div>
+											<div class="line-grid"></div>
+											<div class="Bootom-ProjectItem">
+												<h2>New Office Room</h2>
+												<a class="portfolio-zoom fancybox-effects-b hvr-icon-pop btn" href="style/images/portfolio/portfolio-3.jpg">View Project</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="portfolio-item" data-filter="f4">
+								<div class="projectItem">
+									<img src="style/images/portfolio/portfolio-5.jpg"  alt="portfolio" width="370" height="370" >
+									<div class="projectItem-hover">
+										<div class="projectItem-co">
+											<div class="Top-ProjectItem">
+												<p><a href="">Inerior Design</a>,<a href="">Branding</a></p>											
+											</div>
+											<div class="line-grid"></div>
+											<div class="Bootom-ProjectItem">
+												<h2>New Office Room</h2>
+												<a class="portfolio-zoom fancybox-effects-b hvr-icon-pop btn" href="style/images/portfolio/portfolio-5.jpg">View Project</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="portfolio-item" data-filter="f3">
+								<div class="projectItem">
+									<img src="style/images/portfolio/portfolio-6.jpg"  alt="portfolio" width="370" height="370" >
+									<div class="projectItem-hover">
+										<div class="projectItem-co">
+											<div class="Top-ProjectItem">
+												<p><a href="">Inerior Design</a>,<a href="">Branding</a></p>											
+											</div>
+											<div class="line-grid"></div>
+											<div class="Bootom-ProjectItem">
+												<h2>New Office Room</h2>
+												<a class="portfolio-zoom fancybox-effects-b hvr-icon-pop btn" href="style/images/portfolio/portfolio-6.jpg">View Project</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>		
+						</div>
+					</div>
+					<div class="loade-more text-center">
+						<a href="#" title="Check All Works" class="hel-button btn">Check All Works</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- End Our Projects -->
+		
+		<!-- Start Our Services -->
+
+		<section id="Services" class="light-wrapper">
+			<div class="container inner">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="title-section text-center">
+							<p>THE BEST</p>
+							<h3>OUR SERVICES</h3>
+						</div>
+						<div class="description-welcome text-center">
+							<p>Helmets is a business theme which perfectly suited Construction company, Cleaning agency, Mechanic workshop and any kind of handyman business. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+						</div>
+					</div>
+				</div>
+				<div class="divcod55"></div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="service_wrapper  service-style-1">
+							<img alt="Service-img" src="style/images/page/ser-about1.png">
+							<div class="overlay-middle">
+								<div class="overlay-content title-service">
+									<i class="icon icon-Wrench"></i>
+									<h3><a href="#" title="Pipes Repairing">Pipes Repairing</a></h3>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="service_wrapper  service-style-1">
+							<img alt="Service-img" src="style/images/page/ser-about2.png">
+							<div class="overlay-middle">
+								<div class="overlay-content title-service">
+									<i class="icon icon-Speedometter"></i>
+									<h3><a href="#" title="Water Heaters Repairing">Water Heaters Repairing</a></h3>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="service_wrapper  service-style-1">
+							<img alt="Service-img" src="style/images/page/ser-about3.png">
+							<div class="overlay-middle">
+								<div class="overlay-content title-service">
+									<i class="icon icon-DiamondRing"></i>
+									<h3><a href="#" title="Sink Repairing">Sink Repairing</a></h3>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="home-call-to-action">
+							<a class="btn btn-grey" href="#" title="Hire Us Now">Hire Us Now</a>
+							<p>Helmets is a business theme which perfectly suited Construction company, Cleaning agency, Mechanic workshop and any kind of handyman business.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- End Our Services -->
+
+		
+		<!-- Start Our Testimonials -->
+
+		<section id="Testimonials" class="whitesmoke-wrapper">
+			<div class="container inner">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="title-section text-center">
+							<p>People Say</p>
+							<h3>Testimonials</h3>
+						</div>
+						<div class="description-welcome text-center">
+							<p>Helmets is a business theme which perfectly suited Construction company, Cleaning agency, Mechanic workshop and any kind of handyman business. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+						</div>
+					</div>
+				</div>		
+				<div class="divcod55"></div>
+				<div class="row">
+					<div id="Testimonials-3col" class="owl-carousel owl-theme">
+						<div class="item-testimonial">
+							<div class="quote-client">
+								<p>Lorem ipsum dolor sit consctetur adipiscing elit. Se Integer lore quam, adipiscing in condimentum tristique vel, eleifend sed turpis.</p>
+							</div><!-- End quote-client -->
+							<div class="info-client">
+								<div class="avata"><img src="style/images/page/avatar-1.png" alt=""></div>
+								<span class="client-name">Begha</span>
+								<span class="client-position">Graphic Designer, 7oroof Agency</span>
+							</div><!-- End info-client -->
+						</div>
+						<div class="item-testimonial">
+							<div class="quote-client">
+								<p>Lorem ipsum dolor sit consctetur adipiscing elit. Se Integer lore quam, adipiscing in condimentum tristique vel, eleifend sed turpis.</p>
+							</div><!-- End quote-client -->
+							<div class="info-client">
+								<div class="avata"><img src="style/images/page/avatar-2.png" alt=""></div>
+								<span class="client-name">Omar Elnagar</span>
+								<span class="client-position">Civil Engineer , 7oroof Agency</span>
+							</div><!-- End info-client -->
+						</div>
+						<div class="item-testimonial">
+							<div class="quote-client">
+								<p>Lorem ipsum dolor sit consctetur adipiscing elit. Se Integer lore quam, adipiscing in condimentum tristique vel, eleifend sed turpis.</p>
+							</div><!-- End quote-client -->
+							<div class="info-client">
+								<div class="avata"><img src="style/images/page/avatar-3.png" alt=""></div>
+								<span class="client-name">Kareem Fahmey</span>
+								<span class="client-position">Senior Developer, 7oroof Agency</span>
+							</div><!-- End info-client -->
+						</div>
+						<div class="item-testimonial">
+							<div class="quote-client">
+								<p>Lorem ipsum dolor sit consctetur adipiscing elit. Se Integer lore quam, adipiscing in condimentum tristique vel, eleifend sed turpis.</p>
+							</div><!-- End quote-client -->
+							<div class="info-client">
+								<div class="avata"><img src="style/images/page/avatar-4.png" alt=""></div>
+								<span class="client-name">Ahmed Abd Alhaleem</span>
+								<span class="client-position">Graphic Designer, 7oroof Agency</span>
+							</div><!-- End info-client -->
+						</div>
+					
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- End Our Testimonials -->	
+		
+		<!-- Start Our Clients -->
+
+		<section id="Clients" class="light-wrapper">
+			<div class="container inner">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="title-section text-center">
+							<p>They Trust Us</p>
+							<h3>Our Clients</h3>
+						</div>
+						<div class="description-welcome text-center">
+							<p>Helmets is a business theme which perfectly suited Construction company, Cleaning agency, Mechanic workshop and any kind of handyman business. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+						</div>
+					</div>
+				</div>		
+				<div class="divcod55"></div>
+				<div class="row">
+					<div class="col-md-12">
+						<div id="Our-clients" class="owl-carousel owl-theme">
+							<a href="#" class="item-client"><img src="style/images/customer/customer-1.png" alt="customer" width="170" height="68"></a>
+							<a href="#" class="item-client"><img src="style/images/customer/customer-2.png" alt="customer" width="170" height="68"></a>
+							<a href="#" class="item-client"><img src="style/images/customer/customer-3.png" alt="customer" width="170" height="68"></a>
+							<a href="#" class="item-client"><img src="style/images/customer/customer-4.png" alt="customer" width="170" height="68"></a>
+							<a href="#" class="item-client"><img src="style/images/customer/customer-5.png" alt="customer" width="170" height="68"></a>
+							<a href="#" class="item-client"><img src="style/images/customer/customer-6.png" alt="customer" width="170" height="68"></a>
+							<a href="#" class="item-client"><img src="style/images/customer/customer-1.png" alt="customer" width="170" height="68"></a>
+							<a href="#" class="item-client"><img src="style/images/customer/customer-2.png" alt="customer" width="170" height="68"></a>
+							<a href="#" class="item-client"><img src="style/images/customer/customer-3.png" alt="customer" width="170" height="68"></a>
+							<a href="#" class="item-client"><img src="style/images/customer/customer-4.png" alt="customer" width="170" height="68"></a>
+							<a href="#" class="item-client"><img src="style/images/customer/customer-5.png" alt="customer" width="170" height="68"></a>
+							<a href="#" class="item-client"><img src="style/images/customer/customer-6.png" alt="customer" width="170" height="68"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- End Our Clients  -->
+		
+		<!-- Start Footer -->
+
+		<footer id="footer" class="site-footer footer-style1">
+			<div class="container">
+				<div class="row">
+					<div class="top-footer">
+						<div class="col-xs-12 col-md-8">
+							<div class="about-footer-box footer-box">
+								<div class="footer-box-item">
+									<span class="icon icon-Phone2"></span>
+									<div class="footer-box-txt">
+										<h6>CONTACT</h6>
+										<p>N'hésitez pas appeler nous : <span>(+225) 000 00 000</span></p>     
+										<p>Email au: <span>portail-frs@Ivoiruss.com</span></p>     
+									</div>	
+								</div>	
+								<div class="footer-box-item">
+									<span class="icon icon-Pointer"></span>
+									<div class="footer-box-txt">
+										<h6>Addresse</h6>
+										<p>Cote d'Ivoire, Abidjan 225</p>                                                                                                               
+										<p>Cocody Centre Lycée Mermoze.</p>                                                                                                               
+									</div>	
+								</div>								
+							</div>
+						</div>
+						<div class="col-xs-12 col-md-4">
+							<div class="contacts-footer-box footer-box">
+								<div class="footer-box-follow">
+									<span class="icon icon-Heart"></span>
+									<div class="footer-box-txt">
+										<h6>NOUS SUIVRE</h6>
+										<div class="fotter-follow">
+											<ul>
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fa fa-vimeo-square"></i></a></li>
+												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+											</ul>
+										</div>
+									</div>	
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="bottom-footer">
+						<div class="col-xs-12 col-md-3">
+							<div class="footer-block">
+								<h6>&Agrave; Propos</h6>
+								<div class="textwidget">
+									<p>Nous somme une société de Formation et Vente de logiciel Métier. Notre domaine de definition est les Processus Achat/Appro/Stock et autre en entreprise</p>
+								</div>
+							</div>
+							<div class="Newsletter">
+								<form action="#" method="post">
+									<input type="email" value="" placeholder="Souscrire à notre Newsletter" name="EMAIL" class="txt-box required email" id="mce-EMAIL">
+									<button type="submit" name="Souscrire" id="mc-embedded-subscribe" class="button btn btnjoin"><i class="fa fa-angle-right"></i></button>
+								</form>
+							</div>
+						</div>
+						<div class="col-xs-12 col-md-3">
+							<div class="footer-block">
+								<h6>Heures de Travail</h6>
+								<div class="textwidget">
+									<p>Ouvert les Jours :</p>
+									<div class="date-value">
+										Lundi - Vendredi : 8H00 à 17H35<br>
+										Samedi : 9H00 to 12H00
+									</div>
+									<p>Vacations :</p>
+									<div class="date-value">
+										All Sunday Days<br>
+										All Official Holidays
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-md-3">
+							<div class="footer-block">
+								<h6>Latest Tweets</h6>
+								<div id="tweets-footer" class='tweet query footer'></div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-md-3">
+							<div class="footer-block">
+								<h6>Partenaire</h6>
+								<ul class="news-footer">
+									<li>
+										<a href="#"><img src="../style/images/page/ournews-1.png" alt=""></a>
+										<h6><a href="#">CKS</a></h6>
+										<span class="news-date">le : <a href="#">May 13, 2010</a></span>
+									</li>
+									<li>
+										<a href="#"><img src="../style/images/page/ournews-2.png" alt=""></a>
+										<h6><a href="#">Asteck</a></h6>
+										<span class="news-date">le : <a href="#">May 13, 2010</a></span>
+									</li>								
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<!-- End Footer  -->
+		
+		<!-- Start Footer Bootom  -->
+
+		<div id="bottom-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7 col-sm-7">
+						<div class="copyright">
+							<p>Portails Fournisseur IBC © All Rights Reserved. With Love by <a href="http://s_co_2007@hotmail.fr">JM Corps</a> <label class="footer-link"><a href="#">Privacy Policy</a> - <a href="#">Terms of Use</a></label></p>
+							
+						</div>
+					</div>
+					<div class="col-md-5 col-sm-5">
+						<div class="footer-nav">
+							<ul class="nav-ul">
+						<li><a href="#">Accueil</a></li>
+						<li><a href="about.html">&Agrave; Propos</a></li>
+						<li><a href="service.html">Services</a></li>
+						<li><a href="contact.php">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- End Footer Bootom -->
+
+	</div>
+	
+	<!-- Back to top Link -->
+	<div id="to-top" class="main-bg"><span class="fa fa-chevron-up"></span></div>
+</div>
+
+
+<!-- Placed at the end of the document so the pages load faster -->
+
+<script type="text/javascript" src="style/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="style/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="style/js/jquery.flexnav.js"></script>
+
+<script type="text/javascript" src="style/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+<script type="text/javascript" src="style/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+
+<script type="text/javascript" src="style/rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
+<script type="text/javascript" src="style/rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script type="text/javascript" src="style/rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
+<script type="text/javascript" src="style/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script type="text/javascript" src="style/rs-plugin/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script type="text/javascript" src="style/rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>
+<script type="text/javascript" src="style/rs-plugin/js/extensions/revolution.extension.migration.min.js"></script>
+<script type="text/javascript" src="style/rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
+
+<script type="text/javascript" src="style/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="style/js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="style/js/jquery.fancybox.js"></script>
+<script type="text/javascript" src="style/js/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="style/js/jquery.fancybox-media.js"></script>
+<script type="text/javascript" src="style/js/jquery.inview.min.js"></script>
+<script type="text/javascript" src="style/js/jflickrfeed.min.js"></script>
+<script type="text/javascript" src="style/js/tweetie.min.js"></script>
+
+<script type="text/javascript" src="style/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="style/js/classie.js"></script>
+<script type="text/javascript" src="style/js/main.js"></script>
+<script type="text/javascript" src="style/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="style/js/wow.min.js"></script>
+<script type="text/javascript" src="style/js/custom.js"></script>
+</body>
+
+</html>

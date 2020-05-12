@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <!-- implement font-awesome for icon svg -->
+    <link rel="stylesheet" href="assets/css/all.css">
+
+    <!-- implement boostrap minimal style  -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <!-- implement material design style  -->
+    <link rel="stylesheet" href="assets/css/mdb.css">
+
+    <!-- implement select style -->
+    <link rel="stylesheet" href="assets/css/jquery.betterdropdown.css">
+
+    <!-- implement style for home page -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- implement common style for all page -->
+    <link rel="stylesheet" href="assets/css/common.css">
+
+
+    <title>Accueil</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 col-sm-6">
+                <div class="flexbox flex-left-center flex-column">
+                    <img src="assets/pictures/logo.png" class='widh-60' alt="" srcset="">
+                    <p class="ml-5 color-grey  h5">Le portails fournisseurs</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 p-v-10">
+                <div class="border-left p-h-10">
+                    <form class="form-authenticate">
+                        <div class="row">
+                            <div class="col-md-12 mb-1">
+                                <h6 class="color-primary">CONNEXION COMPTE</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-5">
+                                <div class="md-form mt-0 mb-0 ">
+                                    <input type="text" id="inputIconEx2" class="form-control">
+                                    <label for="inputIconEx2">Identifiant</label>
+                                  </div>
+                            </div>
+                            <div class="col-md-7 col-sm-5">
+                                <div class="row">
+                                    <div class="col-md-9 col-sm-10">
+                                        <div class="md-form mt-0 mb-0 ">
+                                            <input type="password" id="inputValidationEx2" class="form-control validate">
+                                            <label for="inputValidationEx2">Mot de passe</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-2 p-0">
+                                        <input type="submit" class="btn btn-outline-color-primary waves-effect no-over-shadow" value="OK"/>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <a href="#" class="link-authenticate">Mot de passe oublié ?</a>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <a href="#" class="link-authenticate">Pas encore inscrit ?</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12">
+              <nav class="navbar navbar-expand-sm navbar-dark" id="navbar">
+
+                <!-- Navbar brand -->
+                <a class="navbar-brand" href="./accueil.html"><i class="fas fa-home"></i></a>
+              
+                <!-- Collapse button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                  aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="basicExampleNav">
+              
+                  <!-- Links -->
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuAgrement" data-toggle="dropdown" >agrément</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuAgrement">
+                          <a class="dropdown-item" href="./search_result.html">Participer à un agrément</a>
+                          <a class="dropdown-item" href="./update_agrement.html">Mettre à jour un agrément</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuAgrement" data-toggle="dropdown" >appel d'offre</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuAgrement">
+                          <a class="dropdown-item" href="#">Participer à un appel d'offre</a>
+                          <a class="dropdown-item" href="#">Mettre à jour un appel d'offre</a>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">FORUM
+                        <span class="sr-only">(current)</span>
+                      </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuAgrement" data-toggle="dropdown" >Gestion des fichiers</a>
+                      <div class="dropdown-menu dropdown-primary dropdown-lg" aria-labelledby="navbarDropdownMenuAgrement">
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <h6 class="color-primary">Contrats</h6>
+                                </div>
+                                <div class="col-md-12 ">
+                                  <ul class="sub-title-menu">
+                                    <li><a class="dropdown-item" href="./clause_confidentialite.html">Clause de confidentialité</a></li>
+                                    <li><a class="dropdown-item" href="./contrat.html">Contrat et Annexe</a></li>
+                                    <li><a class="dropdown-item" href="./autre.html">Avenant</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6 border-left">
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <h6 class="color-primary">Documents</h6>
+                                </div>
+                                <div class="col-md-12 ">
+                                  <ul class="sub-title-menu">
+                                    <li><a class="dropdown-item" href="#">Catalogue</a></li>
+                                    <li><a class="dropdown-item" href="#">Facture</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuAgrement" data-toggle="dropdown" >Mon Compte</a>
+                      <div class="dropdown-menu dropdown-primary dropdown-lg" aria-labelledby="navbarDropdownMenuAgrement">
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <h6 class="color-primary">Paramêtres</h6>
+                                </div>
+                                <div class="col-md-12 ">
+                                  <ul class="sub-title-menu">
+                                    <li><a class="dropdown-item" href="./profil.html">Mes informations</a></li>
+                                    <li><a class="dropdown-item" href="./profil.html">Mes informations</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6 border-left">
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <h6 class="color-primary">Mes resultats</h6>
+                                </div>
+                                <div class="col-md-12 ">
+                                  <ul class="sub-title-menu">
+                                    <li><a class="dropdown-item" href="#">Agréments</a></li>
+                                    <li><a class="dropdown-item" href="#">Appel d'offres</a></li>
+                                    <li><a class="dropdown-item" href="#">Autre</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+              
+                  </ul>
+                  <!-- Links -->
+                </div>
+                <!-- Collapsible content -->
+              
+              </nav>
+            </div>
+            <div class="col-md-12 col-sm-12 p-5">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="card text-white bg-color-primary mb-3 card-presentation" >
+                    <div class="card-header"><i class="fas fa-file-signature"></i> participer à vos appels d'offres et agréments</div>
+                    <div class="card-body">
+                      <p class="card-text text-white">La solution complètes pour consulter vos marchés</p>
+                      <a href="./inscription.html" class="btn btn-rounded waves-effect">S'inscrire</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card text-white bg-color-primary mb-3 card-presentation" >
+                    <div class="card-header"><i class="fas fa-chart-pie"></i> consulter</div>
+                    <div class="card-body">
+                      <p class="card-text text-white">Plus de 400 000 avis de marchés, saisissez toutes les opportunités de croissance</p>
+                      <div class="row">
+                        <form action="" class="consulter">
+                          <div class="row">
+                            <div class="col-md-8">
+                              <select class="browser-default custom-select">
+                                <option value="" disabled selected>Appel d'offres</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                              </select>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="row">
+                                <div class="col-md-4 col-sm-5">
+                                  <select id="better-dropdown-example">
+                                    <!-- ne pas retirer la ligne sous-dessous -->
+                                    <option value="">--choose a ship--</option>
+                                    <!-- ici vous pouvez mettre les options -->
+                                    <option value="Etude maitrise d'oeuvre">Etude maitrise d'oeuvre</option>
+                                    <option value="Option 2">Option 2</option>
+                                    <option value="Option 3">Option 3</option>
+                                    <option value="Option 4">Option 4</option>
+                                  </select>
+                                </div>
+                                <div class="col-md-4 col-sm-5">
+                                  <select id="better-dropdown-example-2">
+                                    <option value="">--choose a ship--</option>
+                                    <option value="3daysAgo">Depuis 3 jours</option>
+                                    <option value="1MonthAgo">Depuis 1 mois</option>
+                                  </select>
+                                </div>
+                                <div class="col-md-2 col-sm-2">
+                                  <button type="button" class="btn btn-sm m-0 btn-rounded waves-effect"> <i class="fas fa-search"></i></button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-sm-12 p-5">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="flexbox flex-space-between border-bottom">
+                        <p class="border-left-grif-primary pl-2">LES DERNIERS APPELS D'OFFRES </p>
+                        <a href="#"> Tous les appels offres <i class="fas fa-plus-circle color-primary"></i></a>
+                      </div>
+                    </div>
+                    <div class="col-md-12 ">
+                      <div class="row pt-4">
+                        <div class="col-md-6 pt-4">
+                          <div class="card">
+                            <div class="card-header">
+                              <a href="./details_agrement.html"><h4 class="color-primary">AO/RFP-2019N°00004</h4></a>
+                            </div>
+                            <div class="card-body">
+                              <blockquote class="blockquote mb-0">
+                                <p>APPEL D'OFFRE EQUIPEMENT DE CLIMIATISATION</p>
+                                <footer class="blockquote-footer">DATE DÉBUT : 31/07/2019</footer>
+                                <footer class="blockquote-footer">DATE FIN : 31/10/2019</footer>
+                              </blockquote>
+                            </div>
+                            <div class="card-footer">
+                              <div class="flexbox flex-space-between">
+                                <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                                <p><i class="fas fa-thumbtack"></i> Biens</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 pt-4">
+                          <div class="card">
+                            <div class="card-header">
+                              <h4 class="color-primary"> <a type="button" data-toggle="modal" data-target="#frameModalBottom">AO/RFP-2019N°00004</a></h4>
+                            </div>
+                            <div class="card-body">
+                              <blockquote class="blockquote mb-0">
+                                <p>APPEL D'OFFRE EQUIPEMENT DE CLIMIATISATION</p>
+                                <footer class="blockquote-footer">DATE DÉBUT : 31/07/2019</footer>
+                                <footer class="blockquote-footer">DATE FIN : 31/10/2019</footer>
+                              </blockquote>
+                            </div>
+                            <div class="card-footer">
+                              <div class="flexbox flex-space-between">
+                                <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                                <p><i class="fas fa-thumbtack"></i> Biens</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 pt-4">
+                          <div class="card">
+                            <div class="card-header">
+                              <h4 class="color-primary">AO/RFP-2019N°00004</h4>
+                            </div>
+                            <div class="card-body">
+                              <blockquote class="blockquote mb-0">
+                                <p>APPEL D'OFFRE EQUIPEMENT DE CLIMIATISATION</p>
+                                <footer class="blockquote-footer">DATE DÉBUT : 31/07/2019</footer>
+                                <footer class="blockquote-footer">DATE FIN : 31/10/2019</footer>
+                              </blockquote>
+                            </div>
+                            <div class="card-footer">
+                              <div class="flexbox flex-space-between">
+                                <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                                <p><i class="fas fa-thumbtack"></i> Biens</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 pt-4">
+                          <div class="card">
+                            <div class="card-header">
+                              <h4 class="color-primary">AO/RFP-2019N°00004</h4>
+                            </div>
+                            <div class="card-body">
+                              <blockquote class="blockquote mb-0">
+                                <p>APPEL D'OFFRE EQUIPEMENT DE CLIMIATISATION</p>
+                                <footer class="blockquote-footer">DATE DÉBUT : 31/07/2019</footer>
+                                <footer class="blockquote-footer">DATE FIN : 31/10/2019</footer>
+                              </blockquote>
+                            </div>
+                            <div class="card-footer">
+                              <div class="flexbox flex-space-between">
+                                <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                                <p><i class="fas fa-thumbtack"></i> Biens</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 pt-4">
+                          <div class="card">
+                            <div class="card-header">
+                              <h4 class="color-primary">AO/RFP-2019N°00004</h4>
+                            </div>
+                            <div class="card-body">
+                              <blockquote class="blockquote mb-0">
+                                <p>APPEL D'OFFRE EQUIPEMENT DE CLIMIATISATION</p>
+                                <footer class="blockquote-footer">DATE DÉBUT : 31/07/2019</footer>
+                                <footer class="blockquote-footer">DATE FIN : 31/10/2019</footer>
+                              </blockquote>
+                            </div>
+                            <div class="card-footer">
+                              <div class="flexbox flex-space-between">
+                                <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                                <p><i class="fas fa-thumbtack"></i> Biens</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 pt-4">
+                          <div class="card">
+                            <div class="card-header">
+                              <h4 class="color-primary">AO/RFP-2019N°00004</h4>
+                            </div>
+                            <div class="card-body">
+                              <blockquote class="blockquote mb-0">
+                                <p>APPEL D'OFFRE EQUIPEMENT DE CLIMIATISATION</p>
+                                <footer class="blockquote-footer">DATE DÉBUT : 31/07/2019</footer>
+                                <footer class="blockquote-footer">DATE FIN : 31/10/2019</footer>
+                              </blockquote>
+                            </div>
+                            <div class="card-footer">
+                              <div class="flexbox flex-space-between">
+                                <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                                <p><i class="fas fa-thumbtack"></i> Biens</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 pt-4">
+                          <div class="card">
+                            <div class="card-header">
+                              <h4 class="color-primary">AO/RFP-2019N°00004</h4>
+                            </div>
+                            <div class="card-body">
+                              <blockquote class="blockquote mb-0">
+                                <p>APPEL D'OFFRE EQUIPEMENT DE CLIMIATISATION</p>
+                                <footer class="blockquote-footer">DATE DÉBUT : 31/07/2019</footer>
+                                <footer class="blockquote-footer">DATE FIN : 31/10/2019</footer>
+                              </blockquote>
+                            </div>
+                            <div class="card-footer">
+                              <div class="flexbox flex-space-between">
+                                <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                                <p><i class="fas fa-thumbtack"></i> Biens</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 pt-4">
+                          <div class="card">
+                            <div class="card-header">
+                              <h4 class="color-primary">AO/RFP-2019N°00004</h4>
+                            </div>
+                            <div class="card-body">
+                              <blockquote class="blockquote mb-0">
+                                <p>APPEL D'OFFRE EQUIPEMENT DE CLIMIATISATION</p>
+                                <footer class="blockquote-footer">DATE DÉBUT : 31/07/2019</footer>
+                                <footer class="blockquote-footer">DATE FIN : 31/10/2019</footer>
+                              </blockquote>
+                            </div>
+                            <div class="card-footer">
+                              <div class="flexbox flex-space-between">
+                                <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                                <p><i class="fas fa-thumbtack"></i> Biens</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12 pt-5">
+                          <div class="flexbox flex-center-rigth">
+                            <nav aria-label="Page navigation example">
+                              <ul class="pagination pg-blue">
+                                <li class="page-item ">
+                                  <a class="page-link" tabindex="-1">Retour</a>
+                                </li>
+                                <li class="page-item"><a class="page-link">1</a></li>
+                                <li class="page-item active">
+                                  <a class="page-link">2 <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="page-item"><a class="page-link">3</a></li>
+                                <li class="page-item ">
+                                  <a class="page-link">Suivant</a>
+                                </li>
+                              </ul>
+                            </nav>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="flexbox flex-space-between border-bottom">
+                        <p class="border-left-grif-primary pl-2">LES DERNIERS AGRÉMENTS </p>
+                        <a href="#"> Tous les agréments <i class="fas fa-plus-circle color-primary"></i></a>
+                      </div>
+                    </div>
+                    <div class="col-md-12 ">
+                      <div class="row pt-4">
+                        <div class="col-md-6 pt-4">
+                          <div class="card">
+                            <div class="card-header">
+                              <h4 class="color-primary">Agrement test 2</h4>
+                            </div>
+                            <div class="card-body">
+                              <blockquote class="blockquote mb-0">
+                                <p>DATE CLOTURE : OUVERT</p>
+                                
+                              </blockquote>
+                            </div>
+                            <div class="card-footer">
+                              <div class="flexbox flex-space-between">
+                                <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                                <p><i class="fas fa-thumbtack"></i> Biens</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 pt-4">
+                          <div class="card">
+                            <div class="card-header">
+                              <h4 class="color-primary">Agrement test 2</h4>
+                            </div>
+                            <div class="card-body">
+                              <blockquote class="blockquote mb-0">
+                                <p>DATE CLOTURE : OUVERT</p>
+                                
+                              </blockquote>
+                            </div>
+                            <div class="card-footer">
+                              <div class="flexbox flex-space-between">
+                                <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                                <p><i class="fas fa-thumbtack"></i> Biens</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 pt-4">
+                          <div class="card">
+                            <div class="card-header">
+                              <h4 class="color-primary">Agrement test 2</h4>
+                            </div>
+                            <div class="card-body">
+                              <blockquote class="blockquote mb-0">
+                                <p>DATE CLOTURE : OUVERT</p>
+                                
+                              </blockquote>
+                            </div>
+                            <div class="card-footer">
+                              <div class="flexbox flex-space-between">
+                                <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                                <p><i class="fas fa-thumbtack"></i> Biens</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 pt-4">
+                          <div class="card">
+                            <div class="card-header">
+                              <h4 class="color-primary">Agrement test 2</h4>
+                            </div>
+                            <div class="card-body">
+                              <blockquote class="blockquote mb-0">
+                                <p>DATE CLOTURE : OUVERT</p>
+                                
+                              </blockquote>
+                            </div>
+                            <div class="card-footer">
+                              <div class="flexbox flex-space-between">
+                                <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                                <p><i class="fas fa-thumbtack"></i> Biens</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 pt-4">
+                          <div class="card">
+                            <div class="card-header">
+                              <h4 class="color-primary">Agrement test 2</h4>
+                            </div>
+                            <div class="card-body">
+                              <blockquote class="blockquote mb-0">
+                                <p>DATE CLOTURE : OUVERT</p>
+                                
+                              </blockquote>
+                            </div>
+                            <div class="card-footer">
+                              <div class="flexbox flex-space-between">
+                                <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                                <p><i class="fas fa-thumbtack"></i> Biens</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 pt-4">
+                          <div class="card">
+                            <div class="card-header">
+                              <h4 class="color-primary">Agrement test 2</h4>
+                            </div>
+                            <div class="card-body">
+                              <blockquote class="blockquote mb-0">
+                                <p>DATE CLOTURE : OUVERT</p>
+                                
+                              </blockquote>
+                            </div>
+                            <div class="card-footer">
+                              <div class="flexbox flex-space-between">
+                                <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                                <p><i class="fas fa-thumbtack"></i> Biens</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 pt-4">
+                          <div class="card">
+                            <div class="card-header">
+                              <h4 class="color-primary">Agrement test 2</h4>
+                            </div>
+                            <div class="card-body">
+                              <blockquote class="blockquote mb-0">
+                                <p>DATE CLOTURE : OUVERT</p>
+                                
+                              </blockquote>
+                            </div>
+                            <div class="card-footer">
+                              <div class="flexbox flex-space-between">
+                                <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                                <p><i class="fas fa-thumbtack"></i> Biens</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 pt-4">
+                          <div class="card">
+                            <div class="card-header">
+                              <h4 class="color-primary">Agrement test 2</h4>
+                            </div>
+                            <div class="card-body">
+                              <blockquote class="blockquote mb-0">
+                                <p>DATE CLOTURE : OUVERT</p>
+                                
+                              </blockquote>
+                            </div>
+                            <div class="card-footer">
+                              <div class="flexbox flex-space-between">
+                                <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                                <p><i class="fas fa-thumbtack"></i> Biens</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 pt-4">
+                          <div class="card">
+                            <div class="card-header">
+                              <h4 class="color-primary">Agrement test 2</h4>
+                            </div>
+                            <div class="card-body">
+                              <blockquote class="blockquote mb-0">
+                                <p>DATE CLOTURE : OUVERT</p>
+                                
+                              </blockquote>
+                            </div>
+                            <div class="card-footer">
+                              <div class="flexbox flex-space-between">
+                                <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                                <p><i class="fas fa-thumbtack"></i> Biens</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 pt-4">
+                          <div class="card">
+                            <div class="card-header">
+                              <h4 class="color-primary">Agrement test 2</h4>
+                            </div>
+                            <div class="card-body">
+                              <blockquote class="blockquote mb-0">
+                                <p>DATE CLOTURE : OUVERT</p>
+                                
+                              </blockquote>
+                            </div>
+                            <div class="card-footer">
+                              <div class="flexbox flex-space-between">
+                                <p><i class="fas fa-map-marker-alt"></i> Abidjan</p>
+                                <p><i class="fas fa-thumbtack"></i> Biens</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12 pt-5">
+                          <div class="flexbox flex-center-rigth">
+                            <nav aria-label="Page navigation example">
+                              <ul class="pagination pg-blue">
+                                <li class="page-item ">
+                                  <a class="page-link" tabindex="-1">Retour</a>
+                                </li>
+                                <li class="page-item"><a class="page-link">1</a></li>
+                                <li class="page-item active">
+                                  <a class="page-link">2 <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="page-item"><a class="page-link">3</a></li>
+                                <li class="page-item ">
+                                  <a class="page-link">Suivant</a>
+                                </li>
+                              </ul>
+                            </nav>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <!-- Frame Modal Bottom -->
+    <div class="modal fade bottom" id="frameModalBottom" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+
+    <!-- Add class .modal-frame and then add class .modal-bottom (or other classes from list above) to set a position to the modal -->
+    <div class="modal-dialog modal-frame modal-bottom" role="document">
+
+
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="row d-flex justify-content-center align-items-center">
+
+            <p class="pt-3 pr-2">Pour voir des agrement et des appels d'offre veuillez vous authentifier</p>
+
+            <a href="./inscription.html" class="btn btn-secondary" data-dismiss="modal">S'inscrire</a>
+            <a href="./inscription.html" class="btn btn-primary">Se Connecter</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- Frame Modal Bottom -->
+
+    <section class="container-fluid footer navbar-dark">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-6">
+          <h6>FAQ</h6>
+          <ul>
+            <li><a href="#">Nos sources</a></li>
+            <li><a href="#">Nos supports de publication</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6 border-left">
+          <h6>Contacter</h6>
+          <ul>
+            <li><a href="#">Vous souhaitez rechercher un avis</a></li>
+            <li><a href="#">Vous souhaitez publier un avis</a></li>
+            <li><a href="#">Nous contacter</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6 border-left">
+          <h6>Informations légales</h6>
+          <ul>
+            <li><a href="#">Conditions générales d’utilisation</a></li>
+            <li><a href="#">Mentions légales</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6 border-left">
+          <h6>La grande adresse des appels d’offres</h6>
+          <ul class="ul-share">
+            <li><a href="#"><i class="fab fa-facebook icon-link icon-fb"></i></a></li>
+            <li><a href="#"><i class="fab fa-google-plus icon-link icon-gl"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter icon-link icon-tw"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- implement jquery script -->
+    <script src="assets/js/jquery.js"></script>
+
+    <!-- implement font-awesome script -->
+    <script src="assets/js/all.js"></script>
+
+    <!-- implement popper script -->
+    <script src="assets/js/popper.js"></script>
+
+    <!-- implement bootsrap script -->
+    <script src="assets/js/bootstrap.js"></script>
+
+    <!-- implement material design script -->
+    <script src="assets/js/mdb.js"></script>
+
+    <!-- implement select autocomplete script -->
+    <script src="assets/js/jquery.betterdropdown.js"></script>
+
+    <script type="text/javascript" src="assets/js/jquery.waypoints.js"></script>
+
+    <!-- implement accueil page script -->
+    <script src="assets/js/accueil.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+<script type="text/javascript">
+  dataLayer = [{
+    'section': 'HP',
+    'id': '',
+    'refContrat': '',
+    'Formule': '',
+    'société': '',
+    'activité': '',
+    'NAF': '',
+    'civilité': '',
+    'CP': '',
+    'ville': '',
+    'pays': '',
+    'date d ancienneté': '',
+    'date fin': '',
+    'nbr profil AO': '',
+    'nbr profil AM': '',
+    'nbr alerte': '',
+    'nbr favoris': '',
+    'liste départements': '',
+    'mode de connexion': '',
+    'statut de la session': '',
+    'event' : 'AccesData_rechercheRapide'
+  }]
+</script>
+<script type="text/javascript" src="js/gtm.js"></script>
+<header class="headerSite">
+  <div class="headerSiteContent clearfix">
+    <a style="text-decoration: none;" href="index.php" class="headline">
+      <h1 style="color: #0e119c; font-size: 42px; line-height: 20px;">IvoirusBuyer<br><span style="font-size: 12px;">la grande addresse des appels d'offres</span></h1>
+    </a>
+    <form name="signin" id="signin" method="post" action="javascript:" class="formConnexionHeader">
+      <?php if (empty($auth)): ?>
+      <p class="titleBlock">Connexion compte</p>
+      <input id="login" name="login" type="text" placeholder="Identifiant" value="" class="inputText" required />
+      <input id="action" name="action" type="hidden" value="portincorps.php" />
+      
+      <div class="passwordMdpOublie">
+        <input id="password" name="password"  type="password" placeholder="Mot de passe" value="" class="inputText" required />
+        <div class="btnSubmit">
+          <button type="submit" id="loginBtn" class="btnStyleOne">ok</button>
+          <div class="btnShadow">
+            <span class="rightShadow"></span>
+          </div>
+        </div>
+        <a href="#" class="forgetPassword">Mot de passe oublié</a>
+      </div>
+      <?php else : ?>
+      <p class="titleBlock"><?= $auth['name']; ?></p>
+      <div class="passwordMdpOublie" style="padding-top: 1rem;">
+        <a href="logout.php" class="forgetPassword">Déconnection</a>
+      </div>
+      <?php endif; ?>
+      <div class="clearBoth"></div>
+      <div class="clearBoth"></div>
+    </form>
+  </div>
+  <nav class="navbarSite">
+    <ul class="navbarSiteContent clearfix">
+      <li class="home"><a href="index.php" class="pictoHome"></a></li>
+      <li class="offers">
+        <p class="noLink">Agrément</p>
+        <div class="subNav">
+          <ul>
+            <li><a href="?p=agrements">Participer à un agrément</a></li>
+            <li><a href="?p=maj-agrements">Mettre à jour un agrément</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="offers">
+        <p class="noLink">Appel d'Offre</p>
+        <div class="subNav">
+          <ul>
+            <li><a href="?p=appels-offre">Participer à un appel d'offre</a></li>
+            <li><a href="?p=maj-appels-offre">Mettre à Jour un appel d'offre</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="offers">
+        <p class="noLink">Forum</p>
+        <div class="subNav">
+          <ul>
+            <li><a href="#">Détails Agrements</a></li>
+            <li><a href="#">Détails Appel d'Offre</a></li>
+          </ul>
+        </div>
+      </li>
+      <?php if (!empty($auth)): ?>
+      <li class="avisParMetier">
+        <a href="#" itemprop="url">Gestions des fichiers</a>
+        <div class="subNav subNavNoMobile">
+          <p class="blockTitle">Contrats</p>
+          <ul class="regionsList ">
+            <li><a href="#">Clause de confidentialité</a></li>
+            <li><a href="#">Contrat et Annexe</a></li>
+            <li><a href="#">Avenant</a></li>
+          </ul>
+          <p class="blockTitle">Documents</p>
+          <ul class="regionsList ">
+            <li><a href="#">Catalogue</a></li>
+            <li><a href="#">Factures</a></li>
+          </ul>																											
+          <div class="clearBoth"></div>
+        </div>
+      </li>
+      <li class="avisParMetier">
+        <a href="#" itemprop="url">Mon compte</a>
+        <div class="subNav subNavNoMobile">
+          <p class="blockTitle">Paramètres</p>
+          <ul class="regionsList ">
+            <li><a href="#">Mes informations</a></li>
+            <li><a href="#">Réglages</a></li>
+          </ul>
+          <p class="blockTitle">Mes resultats</p>
+          <ul class="regionsList ">
+            <li><a href="?p=res-agrements">Agrements</a></li>
+            <li><a href="?p=res-appels-offre">Appel d'Offre</a></li>
+            <li><a href="#">Autres</a></li>
+          </ul>
+          <div class="clearBoth"></div>
+        </div>
+      </li>
+      <?php endif; ?>
+      <?php if (empty($auth)): ?>
+      <li class="packAcheteurs"><a href="sigin_up/" class="borderNone" itemprop="url">Inscription</a></li>
+      <?php endif; ?>
+      <?php if (!empty($auth)): ?>
+      <li class="packAcheteurs"><a href="logout.php" class="borderNone" itemprop="url">Déconnection</a></li>
+      <?php endif; ?>
+    </ul>
+  </nav>
+</header>

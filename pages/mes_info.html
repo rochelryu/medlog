@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    
+    <!-- implement font-awesome for icon svg -->
+    <link rel="stylesheet" href="assets/css/all.css">
+
+    <!-- implement boostrap minimal style  -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <!-- implement material design style  -->
+    <link rel="stylesheet" href="assets/css/mdb.css">
+
+    <!-- implement select style -->
+    <link rel="stylesheet" href="assets/css/jquery.betterdropdown.css">
+
+    <!-- implement style for profil page -->
+    <link rel="stylesheet" href="assets/css/profil.css">
+
+    <!-- implement common style for all page -->
+    <link rel="stylesheet" href="assets/css/common.css">
+
+
+    <title>Profil</title>
+</head>
+<body>
+    <div class="page-wrapper chiller-theme toggled">
+        <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+          <i class="fas fa-bars"></i>
+        </a>
+        <nav id="sidebar" class="sidebar-wrapper">
+          <div class="sidebar-content">
+            <div class="sidebar-brand">
+              <a href="./accueil.html">Accueil</a>
+              <div id="close-sidebar">
+                <i class="fas fa-times"></i>
+              </div>
+            </div>
+            <div class="sidebar-header">
+              <div class="user-pic">
+                <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+                  alt="User picture">
+              </div>
+              <div class="user-info">
+                <span class="user-name">Jhon
+                  <strong>Smith</strong>
+                </span>
+                <span class="user-role">Client</span>
+                <span class="user-status">
+                  <i class="fa fa-circle color-success"></i>
+                  <span>En ligne</span>
+                </span>
+              </div>
+            </div>
+            
+            <div class="sidebar-menu">
+              <ul>
+                <li class="header-menu">
+                  <span>Mes Resultats</span>
+                </li>
+                <li class="sidebar-dropdown">
+                  <a href="#">
+                    <i class="fas fa-file-signature"></i>
+                    <span>Agrement</span>
+                    <span class="badge badge-pill badge-info">3</span>
+                  </a>
+                  <div class="sidebar-submenu">
+                    <ul>
+                      <li>
+                        <a href="./agrement_termine_profil.html">Terminé
+                          <span class="badge badge-pill badge-info">3</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="./agrement_waiting_profil.html">En Attente</a>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </li>
+                <li class="sidebar-dropdown">
+                  <a href="#">
+                    <i class="fa fa-chart-line"></i>
+                    <span>Appel d'offre</span>
+                  </a>
+                  <div class="sidebar-submenu">
+                    <ul>
+                      <li>
+                        <a href="#">Terminé</a>
+                      </li>
+                      <li>
+                        <a href="#">En Attente</a>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </li>
+                <li class="sidebar-dropdown">
+                  <a href="#">
+                    <i class="fa fa-globe"></i>
+                    <span>Autres</span>
+                  </a>
+                  
+                </li>
+                <li class="header-menu">
+                  <span>Extra</span>
+                </li>
+                <li>
+                  <a href="./mes_info.html">
+                    <i class="fas fa-user"></i>
+                    <span>Mes informations</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-cog"></i>
+                    <span>Réglage</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- sidebar-menu  -->
+          </div>
+          <!-- sidebar-content  -->
+          <div class="sidebar-footer">
+            <a href="#">
+             &copy; <script>document.write(new Date().getFullYear().toString())</script> MEDLOG
+            </a>
+            <a href="#">
+              <i class="fa fa-power-off"></i>
+            </a>
+          </div>
+        </nav>
+        <!-- sidebar-wrapper  -->
+        <main class="page-content">
+          <div class="container-fluid">
+            <h2>Modifier mes informations</h2>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <form class="text-center card border border-light p-5" action="#!">
+
+                        <p class="h4 mb-4">Changer les informations</p>
+                        <div class="form-row mb-4">
+                            <div class="col">
+                                <!-- First name -->
+                                <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Nom">
+                            </div>
+                            <div class="col">
+                                <!-- Last name -->
+                                <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Prenoms">
+                            </div>
+                        </div>
+                    
+                        <!-- E-mail -->
+                        <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+                    
+                        <!-- Phone number -->
+                        <input type="number" id="defaultRegisterPhonePassword" class="form-control" placeholder="Numero de telephone" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+                    
+                        <br>
+                        <!-- Password -->
+                        <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Confirmer en entrant votre mot de passe" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                    
+                    
+                        <button class="btn bg-color-primary my-4 btn-block" type="submit">Enregistrer</button>
+                    
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <form class="text-center card border border-light p-5" action="#!">
+
+                        <p class="h4 mb-4">Changer le mot de passe</p>
+                        <input type="password" id="oldPass" class="form-control mb-4" placeholder="Mot de passe actuel">
+                    
+                        <!-- Phone number -->
+                        <input type="password" id="newPass" class="form-control" placeholder="Nouveau Mot de passe" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+                    
+                        <br>
+                        <!-- Password -->
+                        <input type="password" id="confirPass" class="form-control" placeholder="Confirmer le Mot de passe" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                    
+                    
+                        <button class="btn bg-color-primary my-4 btn-block" type="submit">Enregistrer</button>
+                    
+                    </form>
+                </div>
+            </div>
+          </div>
+               
+        </main>
+        <!-- page-content" -->
+      </div>
+      <!-- page-wrapper -->
+
+    
+    
+
+    <!-- implement jquery script -->
+    <script src="assets/js/jquery.js"></script>
+
+    <!-- implement font-awesome script -->
+    <script src="assets/js/all.js"></script>
+
+    <!-- implement popper script -->
+    <script src="assets/js/popper.js"></script>
+
+    <!-- implement bootsrap script -->
+    <script src="assets/js/bootstrap.js"></script>
+
+    <!-- implement material design script -->
+    <script src="assets/js/mdb.js"></script>
+
+    <!-- implement select autocomplete script -->
+    <script src="assets/js/jquery.betterdropdown.js"></script>
+
+    <!-- implement profil page script -->
+    <script src="assets/js/profil.js"></script>
+</body>
+</html>
