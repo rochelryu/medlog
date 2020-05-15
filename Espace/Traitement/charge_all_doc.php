@@ -224,11 +224,11 @@ $date = date($format);
 
                     // Hydrating and Update if value existe
                     $donnees = array(
-                        'champs' => "ID_DOM_A ,ID_CMPT ,CODE_CAT ,TITRE ,AUTORISER ,CREER_LE ,MODIFIER_LE ,	MODE",
+                        'champs' => "ID_DOM_A ,ID_CMPT ,CODE_CAT ,TITRE, FICHIER ,AUTORISER ,CREER_LE ,MODIFIER_LE ,	MODE",
                         'table' =>  catalogue,
-                        'value' => ":dom, :cmpt, :code, :titre, :autorise, :creer, :modif, :mode",
+                        'value' => ":dom, :cmpt, :code, :titre, :fichier, :autorise, :creer, :modif, :mode",
                     );
-                    $binding = array(':dom' => $dom, ':cmpt' => $id_compt, ':code' => (string)$code, ':titre' => (string)$titre,':autorise' => $autorise, ':creer' => $date, ':modif' => NULL,':mode' => $mode);
+                    $binding = array(':dom' => $dom, ':cmpt' => $id_compt, ':code' => (string)$code, ':titre' => (string)$titre, ':fichier' => (string)$nameDirec, ':autorise' => $autorise, ':creer' => $date, ':modif' => NULL,':mode' => $mode);
 
                     $query->hydrate($donnees);
                     $query->insert($binding);
@@ -245,10 +245,9 @@ $date = date($format);
                             $ext = get_file_ext($fichier1);      $ext2 = get_file_ext($fichier2);
                             $patch = '../../php/';
                             $method = "insertion";
-                            $ancienFiles = NULL;
                             if(array_key_exists($ext, $content_types_list) && array_key_exists($ext2, $content_types_list)) {
                                 $table1 = article_cataloguer; $table2 = details_art_cata;
-                                $tab = import_catalogue_art($table1, $nameDirec, $id_insert,$method, $patch, $file_art, $ancienFiles, $directory,$bdd);
+                                $tab = import_catalogue_art($table1, $id_insert,$method, $patch, $file_art,$bdd);
                                if(count($tab)>0){
                                     $valid2 = import_catalogue_det($table2, $tab, $method, $file_det,$bdd);
                                     if($valid2 == 'ok'){$valide = "ok";}
@@ -257,12 +256,15 @@ $date = date($format);
 
                             }
                         }
-                        }
-                    
-                    unset($query,$donnees, $binding, $verif_data,$verif_bind, $verif,$id_insert,$fichier1,$fichier2, $file_art, $file_det ,$ext, $ext2 ,$patch ,$nameDirec,$browsing  );
-
                 }
+                    
+                unset($query,$donnees, $binding, $verif_data,$verif_bind, $verif,$id_insert,$fichier1,$fichier2, $file_art, $file_det ,$ext, $ext2 ,$patch ,$nameDirec,$browsing  );
+
             }
+            else {
+                $valide = '';
+            }
+        }
         elseif ($group == 'upgrade'){
 
 
@@ -276,7 +278,7 @@ $date = date($format);
 
 // Check if DATA EXIST
             $verif_data = array(
-                'champs' => "ID_CAT_FRS, FICHIER",
+                'champs' => "ID_CAT_FRS",
                 'table' => catalogue,
                 'where' => "ID_CMPT = :cmpt AND ID_DOM_A = :dom AND MODE = :mode",
                 'tri' => "ORDER BY ID_CAT_FRS ASC"
@@ -286,38 +288,38 @@ $date = date($format);
             $query->select($verif_bind);
             $verif = $query->getVariable();
 
-
             if(count($verif) > 0) {
-                $browsing = array('files' => $_FILES["catalogue"],'nbre'=> count($_FILES["catalogue"]),  'doc' => $directory, 'mime' =>$content_types_list);
-                $nameDirec = $manager->uploading($browsing);
-                  // Clean up file to updating
-                                 foreach ($verif as $item){
-                                          $tabUp[] = $item[0];
-                                          $ancienFiles = $item[1];
-                                          $ancien_extension = pathinfo($item[1], PATHINFO_EXTENSION) ;
-                                        suppressionFile($dossier_traite , $ancienFiles, $ancien_extension);
-
-                                      }
-
                 // Hydrating and Update if value existe
                 $donnees = array(
-                    'modes' => "TITRE =:titre,AUTORISER =:autorise ,FICHIER =:file ,MODIFIER_LE=:creer",
+                    'modes' => "TITRE =:titre,AUTORISER =:autorise ,MODIFIER_LE=:creer",
                     'table' =>  catalogue,
                     'where' => "ID_DOM_A =:dom AND ID_CMPT =:cmpt AND MODE=:mode",
                 );
-                $binding = array(':dom' => $dom, ':cmpt' => $id_compt, ':titre' => (string)$titre,':autorise' => $autorise, ':file' => (string)$nameDirec,':creer' => $date, ':mode' => $mode);
+                $binding = array(':dom' => $dom, ':cmpt' => $id_compt, ':titre' => (string)$titre,':autorise' => $autorise, ':creer' => $date, ':mode' => $mode);
 
                 $query->hydrate($donnees);
                 $query->update($binding);
                 $valid = $query->getVariable();
 
-
+                $browsing = array('files' => $_FILES["catalogue"],'nbre'=>count($_FILES["catalogue"]),  'doc' => $directory, 'mime' =>$content_types_list);
+                $nameDirec = $manager->uploading($browsing);
                 $id_insert = "";
                 foreach ($verif as $value){$id_insert = $value[0];}
                 if(!empty($nameDirec)){
 
                   if(!empty($id_insert) && !empty($valid)){
 
+                      // GET if DATA EXIST
+                      $verif_data2 = array(
+                          'champs' => "ID_ART_CAT",
+                          'table' => article_cataloguer,
+                          'where' => "ID_CAT_FRS = :cat AND MODE = :mode",
+                          'tri' => "ORDER BY ID_ART_CAT ASC"
+                      );
+                      $verif_bind2 = array(':cat' => $id_insert, ':mode' => $mode);
+                      $query->hydrate($verif_data2);
+                      $query->select($verif_bind2);
+                      $verif2 = $query->getVariable();
 
                         $fichier1 = addslashes(htmlentities($_FILES["article"]['name'][0]));
                         $file_art = addslashes(htmlentities($_FILES["article"]['tmp_name'][0]));
@@ -328,10 +330,12 @@ $date = date($format);
                         $ext = get_file_ext($fichier1);      $ext2 = get_file_ext($fichier2);
                         $patch = '../../php/';
                         $method = "updating";
-                      
+                      foreach ($verif2 as $item){
+                          $tabUp[] = $item[0];
+                      }
                         if(array_key_exists($ext, $content_types_list) && array_key_exists($ext2, $content_types_list)) {
                             $table1 = article_cataloguer; $table2 = details_art_cata;
-                            $tab = import_catalogue_art($table1, $id_insert,$method, $patch, $file_art, $bdd);
+                            $tab = import_catalogue_art($table1, $id_insert,$method, $patch, $file_art,$bdd);
 
                            $tab = $tabUp;
 
@@ -347,6 +351,9 @@ $date = date($format);
 
                 unset($query,$donnees, $binding, $verif_data,$verif_bind, $verif,$verif_data2,$verif_bind2, $verif2,$id_insert,$fichier1,$fichier2, $file_art, $file_det ,$ext, $ext2 ,$patch ,$nameDirec,$browsing  );
 
+            }
+            else {
+                $valide = '';
             }
         }
 
@@ -364,16 +371,16 @@ $date = date($format);
 // Check if DATA ETAT is 1
         $verif_data = array(
             'champs' => "ID_DOC_F",
-            'table' => bc,
+            'table' => doc_fac,
             'where' => "ID_AGRE = :agree AND ID_BC = :clause AND NUM_FAC =:fact AND MODE = :mode",
-            'tri' => "ORDER BY ID_AVENANT ASC"
+            'tri' => "ORDER BY ID_DOC_F ASC"
         );
         $verif_bind = array(':agree' => $agree, ':clause' => $id_bc, 'fact' => $num_fact, ':mode' => $mode);
         $query->hydrate($verif_data);
         $query->select($verif_bind);
         $verif = $query->getVariable();
 
-        if(count($verif)>0){
+        if(count($verif) == 0){
                     $content_types_list = mimeTypes();
                     $browsing = array('files' => $_FILES["facture"],'nbre'=>count($_FILES["facture"]),  'doc' => $directory, 'mime' =>$content_types_list);
                     $nameDirec = $manager->uploading($browsing);
@@ -393,6 +400,9 @@ $date = date($format);
                         unset($query,$donnees, $binding, $verif_data,$verif_bind, $verif );
 
                     }
+                }
+                else {
+                    $valide = '';
                 }
 
     }

@@ -3,7 +3,6 @@ require_once('../../functions/pdo_connect.php');
 require_once('../../define/define.php');
 require_once('../../functions/encode_utf8.php');
 require_once('../../functions/extension.php');
-require_once('../../callback.php');
 // Needing class
 require_once('../../php/class/Mysql_query.class.php');
 require_once('../../php/class/Fourniss.class.php');
@@ -220,29 +219,46 @@ $libelle = "";
 
                 $directory = "files/files_upload_ao/";
                 $content_types_list = mimeTypes();
-
+                $patch = '../../php/';
                 $idcomp = htmlentities(addslashes($_POST['fcli']));
+                $type_o = htmlentities(addslashes($_POST['type_o']));
+                $appel = htmlentities(addslashes($_POST['appel']));
+                $fichier = addslashes(htmlentities($_FILES["grille"]['name'][0]));
+                $file_grille = addslashes(htmlentities($_FILES["grille"]['tmp_name'][0]));
                 
 
-                for ($i = 0; $i < count($_FILES['upload']['name']); $i++) {
+                $ext = get_file_ext($fichier);
+                if(array_key_exists($ext, $content_types_list)) {
+                    for ($i = 0; $i < count($_FILES['upload']['name']); $i++) {
 
-                    $nameDirec = "";
-
-                    if(!empty($_FILES['upload']['name'][$i]) && !empty($_POST['piece'])){
-
-                        $id_Piece = htmlentities(addslashes($_POST['piece'][$i]));
-
-                        $browsing = array('name' => $_FILES['upload']['name'][$i], 'temp' => $_FILES['upload']['tmp_name'][$i], 'doc' => $directory, 'mime' => $content_types_list);
-                        $nameDirec = $manager->upload_Multiple($browsing);
-                        $req = $bdd->prepare("INSERT INTO ". document_appel . "(ID_PIECE_FA, ID_AGRE, LIBELLE, MODE) VALUES (?,?, ?, 1)");
-                        $req->bindValue(1, $id_Piece, PDO::PARAM_INT);
-                        $req->bindValue(2, $idcomp, PDO::PARAM_INT);
-                        $req->bindValue(3,$nameDirec ,PDO::PARAM_STR);
-                        $req->execute();
-                        $req->closeCursor();
-                        $verifData = $req;
+                        $nameDirec = "";
+    
+                        if(!empty($_FILES['upload']['name'][$i]) && !empty($_POST['piece'])){
+    
+                            $id_Piece = htmlentities(addslashes($_POST['piece'][$i]));
+    
+                            $browsing = array('name' => $_FILES['upload']['name'][$i], 'temp' => $_FILES['upload']['tmp_name'][$i], 'doc' => $directory, 'mime' => $content_types_list);
+                            $nameDirec = $manager->upload_Multiple($browsing);
+                            $req = $bdd->prepare("INSERT INTO ". document_appel . "(ID_PIECE_FA, ID_AGRE, LIBELLE, MODE) VALUES (?,?, ?, 1)");
+                            $req->bindValue(1, $id_Piece, PDO::PARAM_INT);
+                            $req->bindValue(2, $idcomp, PDO::PARAM_INT);
+                            $req->bindValue(3,$nameDirec ,PDO::PARAM_STR);
+                            $req->execute();
+                            $req->closeCursor();
+                            $verifData = $req;
+                        }
                     }
+                    $tab = import_grille((int)$type_o, (int)$idcomp, (int)$appel, $patch, $file_grille,$bdd);
+                   if($tab == "ok"){
+                        $verifData = "ok";
+                    }
+                    
+
                 }
+                
+
+
+
 
                 if ($verifData !== '' ){
                     print json_encode(array('resultat' => 'ok'), JSON_NUMERIC_CHECK);

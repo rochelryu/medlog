@@ -335,7 +335,6 @@ elseif(isset($_POST['update'])){
     if($zone == "compte"){
         // ************* Compte utilisateur *****************
         $dom = htmlentities(addslashes($_POST['domaine']));
-        $code = char(htmlentities(addslashes($_POST['code'])));
         $pass = sha1(htmlentities(addslashes($_POST['conf_pass'])));
         $emailCmpt = htmlentities(addslashes($_POST['email']));
 
@@ -535,20 +534,35 @@ elseif(isset($_POST['update'])){
 
 
         // Hydrating and Insert value Setting Area
-        $donnees = array(
-            'modes' => "ACTIVITE_P =:actiP,ACTIVITE_S =:activS,MARQUES =:marq,NBR_REFERENCE =:nbRef,SERVICE_AP =:servA,DIMENTIONS =:dime,REFERNCE_COM =:refC,
-            ETES_VS =:eteV,SECTEURS_ACTIVITE =:sect, CLIENTS =:cli,PRODUITS_SERVICE =:prod,REFRENCE_ENTR =:refE,TYPE_MARCHE =:typM,LE_QUEL =:leQ,ORGANISATION_COM =:orga ,MODIFIER_LE =:creer",
-            'table' => info_pc_four,
-            'where' => "ID_CMPT =:comp AND MODE =:mode",
-        );
-        $binding = array(':comp' =>$id_ins, ':actiP' =>$activ_p, ':activS' =>$activ_s, ':marq' =>$marq, ':nbRef' =>$nbr_ref, ':servA' =>$serv_aft, ':dime' =>$dimens, ':refC' =>$ref_com,
-            ':eteV' =>$etes_v, ':sect' =>$secteur, ':cli' =>$client, ':prod' =>$prod_s, ':refE' =>$ref_entr, ':typM' =>$type, ':leQ' =>$lequel,
-            ':orga' =>$orga_com, ':creer' =>$creer,':mode' => $mode);
+
+        if ($newEdit == '0') {
+            $donnees = array(
+                'champs' => "ID_CMPT ,ACTIVITE_P ,ACTIVITE_S ,MARQUES ,NBR_REFERENCE ,SERVICE_AP ,DIMENTIONS ,REFERNCE_COM ,ETES_VS ,SECTEURS_ACTIVITE ,
+                CLIENTS ,PRODUITS_SERVICE ,REFRENCE_ENTR ,TYPE_MARCHE ,LE_QUEL ,ORGANISATION_COM ,CREER_LE ,MODIFIER_LE ,MODE",
+                'table' => info_pc_four,
+                'value' => ":comp, :actiP, :activS, :marq, :nbRef, :servA, :dime, :refC, :eteV, :sect, :cli, :prod, :refE, :typM, :leQ, :orga, :creer, :modif, :mode",
+            );
+            $binding = array(':comp' =>$id_ins, ':actiP' =>$activ_p, ':activS' =>$activ_s, ':marq' =>$marq, ':nbRef' =>$nbr_ref, ':servA' =>$serv_aft, ':dime' =>$dimens, ':refC' =>$ref_com,
+                ':eteV' =>$etes_v, ':sect' =>$secteur, ':cli' =>$client, ':prod' =>$prod_s, ':refE' =>$ref_entr, ':typM' =>$type, ':leQ' =>$lequel,
+                ':orga' =>$orga_com, ':creer' =>$creer, ':modif' => NULL, ':mode' => $mode);
+        }
+        else {
+            $donnees = array(
+                'modes' => "ACTIVITE_P =:actiP,ACTIVITE_S =:activS,MARQUES =:marq,NBR_REFERENCE =:nbRef,SERVICE_AP =:servA,DIMENTIONS =:dime,REFERNCE_COM =:refC,
+                ETES_VS =:eteV,SECTEURS_ACTIVITE =:sect, CLIENTS =:cli,PRODUITS_SERVICE =:prod,REFRENCE_ENTR =:refE,TYPE_MARCHE =:typM,LE_QUEL =:leQ,ORGANISATION_COM =:orga ,MODIFIER_LE =:creer",
+                'table' => info_pc_four,
+                'where' => "ID_CMPT =:comp AND MODE =:mode",
+            );
+            $binding = array(':comp' =>$id_ins, ':actiP' =>$activ_p, ':activS' =>$activ_s, ':marq' =>$marq, ':nbRef' =>$nbr_ref, ':servA' =>$serv_aft, ':dime' =>$dimens, ':refC' =>$ref_com,
+                ':eteV' =>$etes_v, ':sect' =>$secteur, ':cli' =>$client, ':prod' =>$prod_s, ':refE' =>$ref_entr, ':typM' =>$type, ':leQ' =>$lequel,
+                ':orga' =>$orga_com, ':creer' =>$creer,':mode' => $mode);
+        }
+
 
         // ---------- End ------------------------
 
         $propriete['info_pc_four'][]= array($donnees, $binding);
-        $valid = $supplier->update_supplier_second($propriete);
+        $valid = ($newEdit == '0') ? $supplier->create_supplier_second_alter($propriete) : $supplier->update_supplier_second($propriete);
         // Unset values
         unset($donnees,$binding,$activ_p ,$activ_s,$marq,$nbr_ref,$serv_aft,$dimens,$ref_com ,$etes_v ,$secteur,$client,$prod_s,$ref_entr,$type,$lequel,$orga_com);
         // Fin
@@ -562,19 +576,31 @@ elseif(isset($_POST['update'])){
             $resNet = htmlentities(addslashes($_POST['res_net'][$j]));
             $l = $j+1;
             // Hydrating and Insert value Setting Area
-            $donnees = array(
-                'modes' => "ANNEE =:annee,CA =:ca,RESULTATS_NET =:res,MODIFIER_LE =:creer",
-                'table' => info_ca_four,
-                'where' => "ID_CMPT =:comp AND ORDRE = :ordre AND MODE =:mode",
-            );
-            $binding = array(':comp'=>$id_ins, ':annee'=>$an, ':ca'=>$ca, ':res'=>$resNet, ':ordre' => $l,':creer' =>$creer, ':mode' => $mode);
+
+            if ($newEdit == '0') {
+                $donnees = array(
+                    'champs' => "ID_CMPT ,ANNEE ,CA ,RESULTATS_NET ,ORDRE, CREER_LE ,MODIFIER_LE ,MODE",
+                    'table' => info_ca_four,
+                    'value' => ":comp, :annee, :ca, :res, :ordre,:creer, :modif, :mode",
+                );
+                $binding = array(':comp'=>$id_ins, ':annee'=>$an, ':ca'=>$ca, ':res'=>$resNet, ':ordre' => $l,':creer' =>$creer, ':modif' => NULL, ':mode' => $mode);
+            }
+            else {
+                $donnees = array(
+                    'modes' => "ANNEE =:annee,CA =:ca,RESULTATS_NET =:res,MODIFIER_LE =:creer",
+                    'table' => info_ca_four,
+                    'where' => "ID_CMPT =:comp AND ORDRE = :ordre AND MODE =:mode",
+                );
+                $binding = array(':comp'=>$id_ins, ':annee'=>$an, ':ca'=>$ca, ':res'=>$resNet, ':ordre' => $l,':creer' =>$creer, ':mode' => $mode);
+            }
+
 
             // ---------- End ------------------------
 
-            $propriete['info_ca_four'][]= array($donnees, $binding);
-             $valid = $supplier->update_supplier_second($propriete);
+            $propriete['info_ca_four'][] = array($donnees, $binding);
+            $valid = ($newEdit == '0') ? $supplier->create_supplier_second_alter($propriete) : $supplier->update_supplier_second($propriete);
             // Unset values
-            unset($donnees,$binding, $an, $ca, $resNet);
+            unset($donnees,$binding, $an, $ca, $resNet, $propriete);
             // Fin
 
         }
@@ -590,19 +616,30 @@ elseif(isset($_POST['update'])){
             $email_dir = htmlentities(addslashes($_POST['email_cnt'][$i]));
 
             // Hydrating and Insert value Setting Area
-            $donnees = array(
-                'modes' => "TITRE =:titre,NOM =:nom,PRENOMS =:prenom,TELEPHONE =:tel,EMAIL =:email,MODIFIER_LE =:creer",
-                'table' => info_contact_four,
-                'where' => "ID_CMPT =:comp AND TITRE =:titres AND MODE =:mode",
-            );
-            $binding = array(':comp' =>$id_ins, ':titre'=>$titre, ':nom'=>$nom_dir, ':prenom'=>$prenom_dir, ':titres' => $titre,':tel'=>$tel_dir, ':email'=>$email_dir, ':creer' =>$creer, ':modif' => NULL, ':mode' => $mode);
+
+            if ($newEdit == '0') {
+                $donnees = array(
+                    'champs' => "ID_CMPT,TITRE ,NOM ,PRENOMS ,TELEPHONE ,EMAIL ,CREER_LE ,MODIFIER_LE ,MODE",
+                    'table' => info_contact_four,
+                    'value' => ":comp, :titre, :nom, :prenom, :tel, :email, :creer, :modif, :mode",
+                );
+                $binding = array(':comp' =>$id_ins, ':titre'=>$titre, ':nom'=>$nom_dir, ':prenom'=>$prenom_dir, ':tel'=>$tel_dir, ':email'=>$email_dir, ':creer' =>$creer, ':modif' => NULL, ':mode' => $mode);
+            }
+            else {
+                $donnees = array(
+                    'modes' => "TITRE =:titre,NOM =:nom,PRENOMS =:prenom,TELEPHONE =:tel,EMAIL =:email,MODIFIER_LE =:creer",
+                    'table' => info_contact_four,
+                    'where' => "ID_CMPT =:comp AND TITRE =:titres AND MODE =:mode",
+                );
+                $binding = array(':comp' =>$id_ins, ':titre'=>$titre, ':nom'=>$nom_dir, ':prenom'=>$prenom_dir, ':titres' => $titre,':tel'=>$tel_dir, ':email'=>$email_dir, ':creer' =>$creer, ':mode' => $mode);
+            }
 
             // ---------- End ------------------------
 
             $propriete['info_contact_four'][]= array($donnees, $binding);
-            $valid = $supplier->update_supplier_second($propriete);
+            $valid = ($newEdit == '0') ? $supplier->create_supplier_second_alter($propriete) : $supplier->update_supplier_second($propriete);
             // Unset values
-            unset($donnees,$binding,$titre, $nom_dir, $prenom_dir, $tel_dir, $email_dir);
+            unset($donnees,$binding,$titre, $nom_dir, $prenom_dir, $tel_dir, $email_dir, $propriete);
             // Fin
         }
     }

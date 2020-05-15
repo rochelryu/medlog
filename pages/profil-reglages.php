@@ -50,7 +50,6 @@ if (!empty($auth)) {
                 <form class="form-chargers card text-center border border-light p-5" name="form-chg" action="php/traitement_sigin.php" method="post" enctype="multipart/form-data">
                                                 <input type="hidden" name="comp" value="<?php echo $auth['user'];?>">
                                                 <input name="update" type="hidden" value="Modifier" />
-                                                <input type="hidden" name="code" value="<?php echo $personal['EMAIL'];?>">
                                                 <input type="hidden" name="comp" value="<?php echo $auth['user'];?>">
                                                 <input type="hidden" name="zone" value="compte">
                                                 <p class="h4 mb-4">Changer les informations</p>

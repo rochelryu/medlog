@@ -67,7 +67,7 @@ if (isset($_GET['id_ref_domaine_activite']) && !empty($_GET['id_ref_domaine_acti
 								<div class="description">
 								<h1 class="color-primary"><a <?= !empty($auth) ? 'href="?p=details-agrements&id='. $approval['ID_AGR'] .'"' : 'type="button" data-toggle="modal" data-target="#frameModalBottom"' ?>><?= $approval['LIBELLE']; ?></a></h1>
 								<h2>Agrement</h2>
-								<p>De Type <?= $approval['DOM_A']; ?> <br>Date de cloture est prevu pour le <?= $approval['DATE_C']; ?></p>
+								<p>De Type <?= $approval['DOM_A']; ?> <br>Date de cloture : <?= $approval['DATE_C']; ?></p>
 								</div>
 							</div>
 						</div>

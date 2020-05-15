@@ -269,7 +269,7 @@ function import_grille($type_o, $agree, $appel, $patch, $files,$bdd){
                     $valid->bindValue(3, $fnc,PDO::PARAM_STR);
                     $valid->bindValue(4,$crt ,PDO::PARAM_INT);
                    $valid->bindValue(5, $cota,PDO::PARAM_INT);
-                   $valid->bindValue(6,$date ,PDO::PARAM_INT);
+                   $valid->bindValue(6,$date ,PDO::PARAM_STR);
                    $valid->bindValue(7,$mode ,PDO::PARAM_INT);
                     $valid->execute();
                     $valid->closeCursor();
@@ -301,7 +301,7 @@ function import_grille($type_o, $agree, $appel, $patch, $files,$bdd){
                     $valid->bindValue(3, $fnc,PDO::PARAM_STR);
                     $valid->bindValue(4,$crt ,PDO::PARAM_INT);
                     $valid->bindValue(5, $cota,PDO::PARAM_INT);
-                    $valid->bindValue(6,$date ,PDO::PARAM_INT);
+                    $valid->bindValue(6,$date ,PDO::PARAM_STR);
                     $valid->bindValue(7,$mode ,PDO::PARAM_INT);
                     $valid->execute();
                     $valid->closeCursor();
@@ -333,7 +333,7 @@ function import_grille($type_o, $agree, $appel, $patch, $files,$bdd){
                     $valid->bindValue(3, $fnc,PDO::PARAM_STR);
                     $valid->bindValue(4,$crt ,PDO::PARAM_INT);
                     $valid->bindValue(5, $cota,PDO::PARAM_INT);
-                    $valid->bindValue(6,$date ,PDO::PARAM_INT);
+                    $valid->bindValue(6,$date ,PDO::PARAM_STR);
                     $valid->bindValue(7,$mode ,PDO::PARAM_INT);
                     $valid->execute();
                     $valid->closeCursor();
@@ -365,7 +365,7 @@ function import_grille($type_o, $agree, $appel, $patch, $files,$bdd){
                     $valid->bindValue(3, $fnc,PDO::PARAM_STR);
                     $valid->bindValue(4,$crt ,PDO::PARAM_INT);
                     $valid->bindValue(5, $cota,PDO::PARAM_INT);
-                    $valid->bindValue(6,$date ,PDO::PARAM_INT);
+                    $valid->bindValue(6,$date ,PDO::PARAM_STR);
                     $valid->bindValue(7,$mode ,PDO::PARAM_INT);
                     $valid->execute();
                     $valid->closeCursor();
@@ -397,7 +397,7 @@ function import_grille($type_o, $agree, $appel, $patch, $files,$bdd){
                     $valid->bindValue(3, $fnc,PDO::PARAM_STR);
                     $valid->bindValue(4,$crt ,PDO::PARAM_INT);
                     $valid->bindValue(5, $cota,PDO::PARAM_INT);
-                    $valid->bindValue(6,$date ,PDO::PARAM_INT);
+                    $valid->bindValue(6,$date ,PDO::PARAM_STR);
                     $valid->bindValue(7,$mode ,PDO::PARAM_INT);
                     $valid->execute();
                     $valid->closeCursor();
@@ -429,7 +429,7 @@ function import_grille($type_o, $agree, $appel, $patch, $files,$bdd){
                     $valid->bindValue(3, $fnc,PDO::PARAM_STR);
                     $valid->bindValue(4,$crt ,PDO::PARAM_INT);
                     $valid->bindValue(5, $cota,PDO::PARAM_INT);
-                    $valid->bindValue(6,$date ,PDO::PARAM_INT);
+                    $valid->bindValue(6,$date ,PDO::PARAM_STR);
                     $valid->bindValue(7,$mode ,PDO::PARAM_INT);
                     $valid->execute();
                     $valid->closeCursor();
@@ -508,20 +508,20 @@ function import_catalogue_art($table1, $id_insert,$method, $patch, $file_art,$bd
 
             if($method == "insertion"){
                 $valid = $bdd->prepare("INSERT INTO ".$table1." (ID_CAT_FRS,ID_DOM_A, ID_S_DOM, CODE, REFERENCE, DESIGNATION, DATE_REFER, DELAI_MOY_LIV, DATE_CHANG, COMAND_MIN, CREER_LE, MODIFIER_LE,MODE) 
-                    VALUES(?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?) ");
-                $valid->bindValue(1,$id_insert,PDO::PARAM_INT);
-                $valid->bindValue(2, $dom, PDO::PARAM_INT);
+                    VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?) ");
+                $valid->bindValue(1,(int)$id_insert,PDO::PARAM_INT);
+                $valid->bindValue(2, (int)$dom, PDO::PARAM_INT);
                 $valid->bindValue(3, $s_dom,PDO::PARAM_STR);
-                $valid->bindValue(4, $code ,PDO::PARAM_STR);
+                $valid->bindValue(4, $code,PDO::PARAM_STR);
                 $valid->bindValue(5, $ref,PDO::PARAM_STR);
-                $valid->bindValue(6,$design ,PDO::PARAM_STR);
+                $valid->bindValue(6,$design,PDO::PARAM_STR);
                 $valid->bindValue(7,$date_ref,PDO::PARAM_STR);
                 $valid->bindValue(8,$delai,PDO::PARAM_STR);
                 $valid->bindValue(9, $renvPrix, PDO::PARAM_STR);
-                $valid->bindValue(10, $comd,PDO::PARAM_INT);
-                $valid->bindValue(12, $date,PDO::PARAM_INT);
-                $valid->bindValue(13,NULL ,PDO::PARAM_STR);
-                $valid->bindValue(14,$mode ,PDO::PARAM_INT);
+                $valid->bindValue(10, (int)$comd,PDO::PARAM_INT);
+                $valid->bindValue(11, $date,PDO::PARAM_STR);
+                $valid->bindValue(12,NULL ,PDO::PARAM_STR);
+                $valid->bindValue(13,$mode ,PDO::PARAM_INT);
                 $valid->execute();
                 $valid->closeCursor();
                 if(!empty($valid)) {
@@ -535,17 +535,19 @@ function import_catalogue_art($table1, $id_insert,$method, $patch, $file_art,$bd
 
                 $valid = $bdd->prepare("UPDATE ".$table1." SET CODE =?, REFERENCE=?, DESIGNATION=?, DATE_REFER=?, DELAI_MOY_LIV=?, DATE_CHANG=?, COMAND_MIN=?, MODIFIER_LE=?
                                         WHERE ID_CAT_FRS = ? AND ID_DOM_A =? AND ID_S_DOM =? AND MODE = ?");
-                $valid->bindValue(10,$id_insert,PDO::PARAM_INT);
-                $valid->bindValue(11, $dom, PDO::PARAM_INT);
-                $valid->bindValue(12, $s_dom,PDO::PARAM_STR);
-                $valid->bindValue(13, $mode ,PDO::PARAM_STR);
+                $valid->bindValue(1,$code,PDO::PARAM_STR);
                 $valid->bindValue(2, $ref,PDO::PARAM_STR);
                 $valid->bindValue(3,$design ,PDO::PARAM_STR);
                 $valid->bindValue(4,$date_ref,PDO::PARAM_STR);
                 $valid->bindValue(5,$delai,PDO::PARAM_STR);
                 $valid->bindValue(6, $renvPrix, PDO::PARAM_STR);
-                $valid->bindValue(7, $comd,PDO::PARAM_INT);
-                $valid->bindValue(9, $date,PDO::PARAM_INT);
+                $valid->bindValue(7, (int)$comd,PDO::PARAM_INT);
+                $valid->bindValue(8, $date,PDO::PARAM_STR);
+                $valid->bindValue(9,(int)$id_insert,PDO::PARAM_INT);
+                $valid->bindValue(10, (int)$dom, PDO::PARAM_INT);
+                $valid->bindValue(11, $s_dom,PDO::PARAM_STR);
+                $valid->bindValue(12, $mode ,PDO::PARAM_STR);
+
                 $valid->execute();
                 $valid->closeCursor();
                 if(!empty($valid)) {

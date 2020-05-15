@@ -1,5 +1,6 @@
 <?php
 // Hydrating and check this Approval informations in Data Base
+$isNewUser = false;
 if (!empty($auth)) {
     $verif_data = array(
     'champs' => "a.ID_AGR, a.LIBELLE, a.DATE_C, d.LIBELLE DOM_A, p.DATE_POST",
@@ -16,6 +17,25 @@ if (!empty($auth)) {
     $fetchApproval = $manager->listAgrement($checking);
     $resApprovals = [];
     unset($verif_bind, $verif_data, $checking);
+    
+    $verif_data = array(
+      'champs' => "id",
+      'table' => new_entries,
+      'where' => "id_compt = :id_compt AND section = :section",
+      'tri' => "ORDER BY id ASC LIMIT 10");
+  $verif_bind = array(':id_compt' => $auth['user'], ':section' => 'res-agrements',);
+  $checking = array($verif_data, $verif_bind);
+  // Get return object in $fetchDatas
+  $fetchNewEntrie = $manager->listAgrement($checking);
+  if (empty($fetchNewEntrie)) {
+      $isNewUser = true;
+      $req = $bdd->prepare("INSERT INTO ". new_entries . "(id_compt, section) VALUES (?,?)");
+                              $req->bindValue(1,$auth['user'],PDO::PARAM_INT);
+                              $req->bindValue(2,'res-agrements' ,PDO::PARAM_STR);
+                              $req->execute();
+                              $req->closeCursor();
+  }
+  unset($verif_bind, $fetchNewEntrie, $req, $verif_data, $checking);
 }
 $id = 0;
 if (isset($_GET['id']) && !empty($_GET['id'])) {
@@ -129,7 +149,39 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                       </div>
                     </div>
                 </div>
-			</div>
+      </div>
+      
+<?php if ($isNewUser): ?>
+<div class="modal show active fade right" id="sideModalTR" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+
+  <!-- Add class .modal-side and then add class .modal-top-right (or other classes from list above) to set a position to the modal -->
+  <div class="modal-dialog modal-side modal-top-left" role="document">
+
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title color-primary w-100" id="myModalLabel">GUIDE</h4>
+      </div>
+      <div class="modal-body">
+		<h5>Resultat des Agrements</h5>
+		<p class="color-grey">
+			Vous pouvez voir ici les resultats de tout vos agrements.
+			<br>
+			Pour cela Il vous suffit de cliquer sur l'agrement que vous voulez voir les resultats
+			<br>
+      Si vous n'avez postuler à aucun agrement et bien c'est le moment de le faire.
+      <br>
+      Vous en Pensez Quoi ? 
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark btn-sm back-guide">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+<?php endif; ?>
 			<?php else: ?>
 
 <script>location.href = location.origin + location.pathname</script>

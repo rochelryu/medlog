@@ -179,7 +179,7 @@ if (!empty($auth)) {
                                                             <td><?= ($catalogue['MODIFIER_LE'] == '') ? 'Pas encore mise a jour' : $catalogue['MODIFIER_LE'] ?></td>
                                                             <td>
                                                                 <?php if ($catalogue['AUTORISER'] == 1): ?> 
-                                                                    <a href="#<?= $catalogue['ID_CAT_FRS'] ?>" class='btn btn-info' data-toggle="modal" data-target="#modalLoginForm<?= $catalogue['CODE_CAT'] ?>">Mettre a jour</a> 
+                                                                    <a href="" class='btn btn-info' data-toggle="modal" data-target="#modalLoginForm<?= $catalogue['ID_CAT_FRS'] ?>">Mettre a jour</a> 
                                                                 <?php endif; ?>
                                                             </td>
                                                         </tr>
@@ -278,7 +278,7 @@ if (!empty($auth)) {
 
 <?php foreach($catalogues as $catalogue): ?>
 <?php if ($catalogue['AUTORISER'] == 1): ?> 
-<div class="modal fade right" id="modalLoginForm<?= $catalogue['CODE_CAT'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<div class="modal fade right" id="modalLoginForm<?= $catalogue['ID_CAT_FRS'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                                                 aria-hidden="true">
                                                 <div class="modal-dialog modal-side modal-bottom-right" role="document">
                                                     <div class="modal-content">
@@ -288,7 +288,50 @@ if (!empty($auth)) {
                                                             <span aria-hidden="true">&times;</span>
                                                         </div>
                                                         <div class="modal-body mx-3">
-                                                            
+                                                        <form id="form-update" name="form-up" action="Espace/Traitement/charge_all_doc.php" method="post" enctype="multipart/form-data">
+                                            <input type="hidden" name="code" id="code" value="<?= $catalogue['CODE_CAT'] ?>">
+                                            <input type="hidden" name="type" id="type" value="catalogue">
+                                            <input type="hidden" name="group" id="group" value="1">
+                                            <input type="hidden" name="f4t" id="f4t" value="<?php echo $auth['user'];?>">
+                                            <input type="hidden" name="domaine" id="dom" value="<?php echo $idDom;?>">
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="form-group">
+                                                    <label class="badge badge-dark">Titre</label>
+                                                    <input type="text" name="titre" id="title" class="form-control" required value="<?= $catalogue['TITRE'] ?>">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="divcod10"></div>
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="badge badge-dark"><i class="fa fa-file-excel fa-2x"></i> Article Catalogué</label>
+                                                        <input type="file" name="article[]" class="form-control" required >
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="badge badge-dark"><i class="fa fa-file-excel fa-2x"></i> Details Article</label>
+                                                        <input type="file" name="det_article[]" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="badge badge-dark"><i class="fa fa-file-pdf fa-2x"></i> / <i class="fa fa-file-word fa-2x"></i> Catalogue PDF/WORD à jour.</label>
+                                                        <input type="file" name="catalogue[]" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="divcod10"></div>
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="form-submit">
+                                                        <input type="submit" name="update" value="Charger" class="btn bg-color-primary">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
                                                         </div>
                                                     </div>
                                                 </div>

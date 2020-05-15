@@ -9,6 +9,12 @@ $(function() {
         window.open(location.origin + location.pathname + '/?d=document.doc', '_blank');
         //console.log(404);		
     });
+    $('.download-maj-appel').click(function(e) {
+        e.preventDefault()
+        const doc = $(this).attr('data-documents')
+        window.open(location.origin + location.pathname + '/?dow=' + doc, '_blank');
+        //console.log(404);		
+    });
 
     $('#lunch1').click(function(e) {
         e.preventDefault()
@@ -28,6 +34,12 @@ $(function() {
         var $form = $(this);
         var formdata = (window.FormData) ? new FormData($form[0]) : null;
         var data = (formdata !== null) ? formdata : $form.serialize();
+        $.notify({
+            position: 3,
+            type: 'info',
+            autoClose: false,
+            message: 'Votre nouveau catalogue est en cours veuillez patienter s\'il vous plait'
+        });
         $.ajax({
             url: $form.attr('action'),
             type: $form.attr('method'),
@@ -36,7 +48,72 @@ $(function() {
             processData: false, // obligatoire pour de l'upload
             dataType: 'json', // selon le retour attendu
             success: function(datas) {
-                console.log('datas', datas)
+                if (datas.result == 'ok') {
+                    $.notify({
+                        position: 3,
+                        type: 'success',
+                        duration: 2000,
+                        message: 'Créee avec succès.'
+                    });
+                    window.setTimeout(function() {
+                        location.href = location.origin + location.pathname + location.search;
+                    }, 2000);
+                } else {
+                    $.notify({
+                        position: 3,
+                        type: 'error',
+                        duration: 4000,
+                        message: 'Echec de la creation.'
+                    });
+                    window.setTimeout(function() {
+                        location.href = location.origin + location.pathname + location.search;
+                    }, 3000);
+                }
+            }
+        });
+    });
+    $('#form-update').submit(function(e) {
+        // On empêche le navigateur de soumettre le formulaire
+        e.preventDefault();
+
+        var $form = $(this);
+        var formdata = (window.FormData) ? new FormData($form[0]) : null;
+        var data = (formdata !== null) ? formdata : $form.serialize();
+        $.notify({
+            position: 3,
+            type: 'info',
+            autoClose: false,
+            message: 'Votre mise a jour est en cours veuillez patienter s\'il vous plait'
+        });
+        $.ajax({
+            url: $form.attr('action'),
+            type: $form.attr('method'),
+            data: data,
+            contentType: false, // obligatoire pour de l'upload
+            processData: false, // obligatoire pour de l'upload
+            dataType: 'json', // selon le retour attendu
+            success: function(datas) {
+                if (datas.result == 'ok') {
+                    $.notify({
+                        position: 3,
+                        type: 'success',
+                        duration: 2000,
+                        message: 'Créee avec succès.'
+                    });
+                    window.setTimeout(function() {
+                        location.href = location.origin + location.pathname + location.search;
+                    }, 2000);
+                } else {
+                    $.notify({
+                        position: 3,
+                        type: 'error',
+                        duration: 4000,
+                        message: 'Echec de la creation.'
+                    });
+                    window.setTimeout(function() {
+                        location.href = location.origin + location.pathname + location.search;
+                    }, 3000);
+                }
             }
         });
     });

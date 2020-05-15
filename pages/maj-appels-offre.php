@@ -1,6 +1,7 @@
 <?php
 // Hydrating and check this Approval informations in Data Base
 $isNewUser = false;
+$isSkiped = true;
 if (!empty($auth)) {
 	
 $verif_data = array(
@@ -28,6 +29,7 @@ $checking = array($verif_data, $verif_bind);
 // Get return object in $fetchDatas
 $fetchApproval = $manager->listAgrement($checking);
 unset($verif_bind, $verif_data, $checking);
+
 
 $verif_data = array(
 	'champs' => "id",
@@ -62,6 +64,34 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 	);
 	$checking = array($verif_data, $verif_bind);
 	$pieces = $manager->listAgrement($checking);
+	unset($verif_bind, $verif_data, $checking);
+
+	$verif_data = array(
+		'champs' => "*",
+		'table' => offre,
+		'where' => "ID_APPEL = :agr",
+		'tri' => "ORDER BY ID_APPEL DESC");
+	$verif_bind = array(
+		':agr' => $id,
+	);
+	$checking = array($verif_data, $verif_bind);
+	$appel_offre = $manager->listAgrement($checking)[0];
+	unset($verif_bind, $verif_data, $checking);
+
+	$dates = ($appel_offre['DATE_F'] == 'Ouvert') ? ['0', '0', '999999999'] : explode('/', $appel_offre['DATE_F']);
+	if ( (int)$dates[2] == (int)date('Y') ) {
+		if ( (int)$dates[1] == (int)date('m') ) {
+			if ((int)$dates[0] >= (int)date('d')) {
+				$isSkiped = false;
+			}
+		}
+		else if ((int)$dates[1] > (int)date('m')) {
+			$isSkiped = false;
+		}
+	}
+	else if ((int)$dates[2] > (int)date('Y')) {
+		$isSkiped = false;
+	}
 }
 
 ?>
@@ -90,25 +120,46 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 							</div>
 							<?php else : ?>
 								<?php if ($id != 0): ?>
+									<?php if (!$isSkiped): ?>
 									<form class="text-center card border border-light p-5" id="uploadFile" name="uploadFile" method="post" enctype="multipart/form-data">
 
-										<h6 class="color-primary mb-4"> <i class="far fa-question-circle"></i> Fichier pour <?= $pieces[0]['LIBELLE']; ?> </h6>
+										<h6 class="color-primary mb-4"> <i class="far fa-question-circle"></i> Fichier pour <?= $appel_offre['LIBELLE']; ?> </h6>
 
 										<?php foreach ($pieces as $piece): ?>
-										<div class="col-md-12 flexbox flex-column flex-left-center mb-4">
-											<div class="mb-2">
-												<div class="custom-control custom-checkbox">
-													<input type="checkbox" name="piece[]" multiple class="custom-control-input" id="piece_<?= $piece['ID_PIECE_FA'];?>" value="<?= $piece['ID_PIECE_FA'];?>">
-													<label class="custom-control-label" for="piece_<?= $piece['ID_PIECE_FA'];?>"><?= $piece['LIBELLE']?></label>
-												</div>
+										<div class="col-md-12 mb-4 position-relative">
+											<div class='position-absolute pos-button-absolute'>
+											<button type="button" data-documents="<?= $piece['PIECE'];?>" class="download-maj-appel btn btn-rounded bg-color-primary m-0 pl-3 pr-3 pt-0 pb-0 flexbox flex-center"><i class="fas fa-download"></i><span class='pl-2'>Fichier example</span></button>
 											</div>
-											<div>
-												<input type="file" name="upload[]">
+											<div class="flexbox flex-column flex-left-center mb-2">
+												<div class="custom-control custom-checkbox">
+												<?php
+												$rep = $bdd->prepare("SELECT * FROM ". document_appel ."  WHERE ID_AGRE = :id_agr AND ID_PIECE_FA = :id_piece_fd");
+												$rep->bindParam(':id_agr', $agree, PDO::PARAM_INT);
+												$rep->bindParam(':id_piece_fd', $piece['ID_PIECE_FA'], PDO::PARAM_INT);
+												$rep->execute();
+												$nbr = $rep->rowCount();
+												if ($nbr > 0) {
+													echo '<input type="checkbox" name="piece[]" multiple class="custom-control-input" value="'. $piece['ID_PIECE_FA'] .'" id="piece_'.$piece['ID_PIECE_FA'].'" checked disabled/>';
+													echo '<label class="custom-control-label" for="piece_'. $piece['ID_PIECE_FA'].'">'. $piece['LIBELLE']. '</label>';
+													echo '</div>';
+													echo '<span class="badge badge-warning">Déjà envoyé</span>';
+												}
+												else {
+													echo '<input type="checkbox" name="piece[]" multiple class="custom-control-input" id="piece_'.$piece['ID_PIECE_FA'].'" value="'. $piece['ID_PIECE_FA'] .'" />';
+													echo '<label class="custom-control-label" for="piece_'. $piece['ID_PIECE_FA'].'">'. $piece['LIBELLE'].'</label>';
+													echo '</div>';
+													echo '<input type="file" name="upload[]">';
+												}
+											?>
+
 											</div>
 										</div>
 										
 										<?php endforeach; ?>
-										<div class="col-md-12 flexbox flex-column flex-left-center mb-4">
+										<div class="col-md-12 flexbox flex-column flex-left-center mb-4 position-relative">
+										<div class='position-absolute pos-button-absolute'>
+											<button type="button" data-documents="grille.xlsx" class="download-maj-appel btn btn-rounded bg-color-primary m-0 pl-3 pr-3 pt-0 pb-0 flexbox flex-center"><i class="fas fa-download"></i><span class='pl-2'>Fichier example</span></button>
+											</div>
 											<div class="mb-2">
 												<div class="custom-control custom-checkbox">
 													<input type="checkbox" name="piece_grille" multiple class="custom-control-input" id="piece_grille" value="piece_grille">
@@ -121,9 +172,42 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 										</div>
 										<input type="hidden" name="action" value="Espace/Traitement/list_doc_offr.php">
 										<input type="hidden" name="fcli" value="<?php echo $agree;?>">
+										<input type="hidden" name="type_o" value="<?php echo $appel_offre['ID_TYPE_O'];?>">
+										<input type="hidden" name="appel" value="<?php echo $appel_offre['ID_APPEL'];?>">
 										<input type="hidden" name="type" value="set-update" />
 										<button class="btn bg-color-primary btn-block my-4" name="go" id="go" type="submit">MISE A JOUR</button>
 									</form>
+									<?php else : ?>
+										<div class="container card my-5">
+
+
+											<!--Section: Content-->
+											<section class="dark-grey-text">
+
+												<div class="row pr-lg-5">
+												<div class="col-md-7 mb-4">
+
+													<div class="view">
+													<img src="assets/pictures/delay.svg" class="img-fluid" alt="smaple image">
+													</div>
+
+												</div>
+												<div class="col-md-5 d-flex align-items-center">
+													<div>
+													
+													<h3 class="font-weight-bold mb-4">Delai depassé</h3>
+
+														<p>Vous ne pouvez plus mettre a jour cet appel d'offre</p>
+													</div>
+												</div>
+												</div>
+
+											</section>
+											<!--Section: Content-->
+
+
+											</div>
+									<?php endif; ?>
 								<?php else : ?>
 									<div class="flexbox flex-center half-heigth">
 										<h4>Selectionnez un Appel a mettre a jour</h4>

@@ -109,7 +109,7 @@ if(!empty($auth)) {
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-                            aria-selected="false">Postion Commerciale</a>
+                            aria-selected="false">Position Commerciale</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="Informations-tab-2" data-toggle="tab" href="#chiffres" role="tab" aria-controls="Chiffres d'Affire"
@@ -493,14 +493,14 @@ if(!empty($auth)) {
                                                     
                                                     <!-- Default inline 2-->
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input type="radio" class="custom-control-input" name="serv_after_sell" id="oui" value="1" <?= (empty($position_commercial)) ? '' : $position_commercial['SERVICE_AP'] == 1 ? 'checked' : '' ?>  />
-                                                        <label class="custom-control-label" for="oui">Oui</label>
+                                                        <input type="radio" class="custom-control-input" name="serv_after_sell" id="serv_after_sell" value="1" <?= (empty($position_commercial)) ? '' : $position_commercial['SERVICE_AP'] == 1 ? 'checked' : '' ?>  />
+                                                        <label class="custom-control-label" for="serv_after_sell">Oui</label>
                                                     </div>
 
                                                     <!-- Default inline 3-->
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input type="radio" class="custom-control-input" name="serv_after_sell" id="non" value="0" <?= (empty($position_commercial)) ? '' : $position_commercial['SERVICE_AP'] == 0 ? 'checked' : '' ?>>
-                                                        <label class="custom-control-label" for="non">Non</label>
+                                                        <input type="radio" class="custom-control-input" name="serv_after_sell" id="serv_after_sellNon" value="0" <?= (empty($position_commercial)) ? '' : $position_commercial['SERVICE_AP'] == 0 ? 'checked' : '' ?>>
+                                                        <label class="custom-control-label" for="serv_after_sellNon">Non</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -562,14 +562,14 @@ if(!empty($auth)) {
                                                     
                                                     <!-- Default inline 2-->
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input type="radio" class="custom-control-input" name="secteur" id="oui" value="1" <?= (empty($position_commercial)) ? '' : $position_commercial['SECTEURS_ACTIVITE'] == 1 ? 'checked' : '' ?> />
-                                                        <label class="custom-control-label" for="oui">Oui</label>
+                                                        <input type="radio" class="custom-control-input" name="secteur" id="secteur" value="1" <?= (empty($position_commercial)) ? '' : $position_commercial['SECTEURS_ACTIVITE'] == 1 ? 'checked' : '' ?> />
+                                                        <label class="custom-control-label" for="secteur">Oui</label>
                                                     </div>
 
                                                     <!-- Default inline 3-->
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input type="radio" class="custom-control-input" name="secteur" id="non" value="0" <?= (empty($position_commercial)) ? '' : $position_commercial['SECTEURS_ACTIVITE'] == 0 ? 'checked' : '' ?>>
-                                                        <label class="custom-control-label" for="non">Non</label>
+                                                        <input type="radio" class="custom-control-input" name="secteur" id="secteurNon" value="0" <?= (empty($position_commercial)) ? '' : $position_commercial['SECTEURS_ACTIVITE'] == 0 ? 'checked' : '' ?>>
+                                                        <label class="custom-control-label" for="secteurNon">Non</label>
                                                     </div>
                                                 </div>
                                     </div>
@@ -590,14 +590,14 @@ if(!empty($auth)) {
                                                     
                                                     <!-- Default inline 2-->
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input type="radio" class="custom-control-input" name="type" id="oui" value="1" <?= (empty($position_commercial)) ? '' : $position_commercial['TYPE_MARCHE'] == 1 ? 'checked' : '' ?> />
-                                                        <label class="custom-control-label" for="oui">Oui</label>
+                                                        <input type="radio" class="custom-control-input" name="type" id="type" value="1" <?= (empty($position_commercial)) ? '' : $position_commercial['TYPE_MARCHE'] == 1 ? 'checked' : '' ?> />
+                                                        <label class="custom-control-label" for="type">Oui</label>
                                                     </div>
 
                                                     <!-- Default inline 3-->
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input type="radio" class="custom-control-input" name="type" id="non" value="0" <?= (empty($position_commercial)) ? '' : $position_commercial['TYPE_MARCHE'] == 0 ? 'checked' : '' ?>>
-                                                        <label class="custom-control-label" for="non">Non</label>
+                                                        <input type="radio" class="custom-control-input" name="type" id="typeNon" value="0" <?= (empty($position_commercial)) ? '' : $position_commercial['TYPE_MARCHE'] == 0 ? 'checked' : '' ?>>
+                                                        <label class="custom-control-label" for="typeNon">Non</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -663,27 +663,27 @@ if(!empty($auth)) {
                                             <?php if (!empty($chiffre_four)): ?> 
                                             <?php foreach($chiffre_four as $chiffre): ?>
                                                     <tr>
-                                                        <th scope="row"><input type="number" disabled readonly name="N[]" class="form-control" value="<?= $chiffre['ANNEE'] ?>" /></th>
-                                                        <td><input type="number" required name="ca[]" class="form-control" value="<?= $chiffre['CA'] ?>"></td>
-                                                        <td><input type="number" required name="res_net[]" class="form-control" value="<?= $chiffre['RESULTATS_NET'] ?>"></td>
+                                                        <td class="form-group" title="Année N"><input type="number" readonly multiple name="N[]" class="form-control" value="<?= $chiffre['ANNEE'] ?>"></td>
+                                                        <td><input type="number" required multiple name="ca[]" class="form-control" value="<?= $chiffre['CA'] ?>"></td>
+                                                        <td><input type="number" required multiple name="res_net[]" class="form-control" value="<?= $chiffre['RESULTATS_NET'] ?>"></td>
                                                         
                                                     </tr>
                                             <?php endforeach; ?>
                                             <?php else: ?>
                                                 <tr>
-                                                    <td class="col-md-2 form-group" title="Année N"><input type="number" readonly name="N[]" class="form-control" value="<?php echo date('Y');?>"></td>
-                                                    <td><input type="number" name="ca[]" class="form-control" value=""></td>
-                                                    <td><input type="number" name="res_net[]" class="form-control" value=""></td>
+                                                    <td class="form-group" title="Année N"><input type="number" readonly multiple name="N[]" class="form-control" value="<?php echo date('Y');?>"></td>
+                                                    <td><input type="number" required multiple name="ca[]" class="form-control" value=""></td>
+                                                    <td><input type="number" required multiple name="res_net[]" class="form-control" value=""></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="col-md-2 form-group" title="Année N - 1"><input type="number" readonly name="N[]" class="form-control" value="<?php echo date('Y') - 1;?>"></td>
-                                                    <td><input type="number" name="ca[]" class="form-control" value=""></td>
-                                                    <td><input type="number" name="res_net[]" class="form-control" value=""></td>
+                                                    <td class="col-md-2 form-group" multiple title="Année N - 1"><input type="number" readonly name="N[]" class="form-control" value="<?php echo date('Y') - 1;?>"></td>
+                                                    <td><input type="number" multiple name="ca[]" class="form-control" value=""></td>
+                                                    <td><input type="number" multiple name="res_net[]" class="form-control" value=""></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="col-md-2 form-group" title="Année N - 2"><input type="number" readonly name="N[]" class="form-control" value="<?php echo date('Y') - 2;?>"></td>
-                                                    <td><input type="number" name="ca[]" class="form-control" value=""></td>
-                                                    <td><input type="number" name="res_net[]" class="form-control" value=""></td>
+                                                    <td class="col-md-2 form-group" multiple title="Année N - 2"><input type="number" readonly name="N[]" class="form-control" value="<?php echo date('Y') - 2;?>"></td>
+                                                    <td><input type="number" multiple name="ca[]" class="form-control" value=""></td>
+                                                    <td><input type="number" multiple name="res_net[]" class="form-control" value=""></td>
                                                 </tr>
                                             <?php endif; ?>
                                             </tbody>
@@ -722,7 +722,7 @@ if(!empty($auth)) {
                                             <?php if (!empty($contact_four)): ?>
                                                 <?php foreach($contact_four as $contact): ?>
                                                     <tr>
-                                                        <th scope="row"><input type="text" disabled readonly name="titre_cnt[]" value="<?= $contact['TITRE'] ?>" class="form-control"></th>
+                                                        <td><input type="text" readonly name="titre_cnt[]" value="<?= $contact['TITRE'] ?>" class="form-control"></td>
                                                         <td><input type="text" required name="nom_cnt[]" class="form-control" value="<?= $contact['NOM'] ?>"></td>
                                                         <td><input type="text" required name="prenoms_cnt[]" class="form-control" value="<?= $contact['PRENOMS'] ?>"></td>
                                                         <td><input type="text" required name="tel_cnt[]" class="form-control" value="<?= $contact['TELEPHONE'] ?>"></td>
@@ -732,10 +732,10 @@ if(!empty($auth)) {
                                             <?php else: ?>
                                                 <tr>
                                                     <td><input type="text" name="titre_cnt[]" readonly value="Président" class="form-control"></td>
-                                                    <td><input type="text" name="nom_cnt[]" class="form-control"></td>
-                                                    <td><input type="text" name="prenoms_cnt[]" class="form-control" value=""></td>
-                                                    <td><input type="tel" name="tel_cnt[]" class="form-control"></td>
-                                                    <td><input type="email" name="email_cnt[]" class="form-control"></td>
+                                                    <td><input type="text" required name="nom_cnt[]" class="form-control"></td>
+                                                    <td><input type="text" required name="prenoms_cnt[]" class="form-control" value=""></td>
+                                                    <td><input type="text" required name="tel_cnt[]" class="form-control"></td>
+                                                    <td><input type="email" required name="email_cnt[]" class="form-control"></td>
 
                                                 </tr>
                                                 <tr>

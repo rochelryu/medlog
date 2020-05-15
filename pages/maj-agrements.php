@@ -1,6 +1,7 @@
 <?php
 // Hydrating and check this Approval informations in Data Base
 $isNewUser = false;
+$isSkiped = true;
 if (!empty($auth)) {
 	$verif_data = array(
 		'champs' => "a.ID_AGR, a.LIBELLE, a.DATE_C, d.LIBELLE DOM_A, p.DATE_POST",
@@ -51,7 +52,7 @@ $id = 0;
 if (isset($_GET['id']) && !empty($_GET['id'])) {
 	$id = (int) htmlspecialchars($_GET['id']);
     $verif_data = array(
-		'champs' => "pfa.ID_PIECE_FD, pfa.ID_AGR, pfa.ID_PIECE, pa.LIBELLE, a.LIBELLE NAME",
+		'champs' => "pfa.ID_PIECE_FD, pfa.ID_AGR, pfa.ID_PIECE, pa.LIBELLE, a.LIBELLE NAME, a.DATE_C",
 		'table' => piece_fournir_agrement.' pfa INNER JOIN '.piece_agrement.' pa ON pa.ID_PIECE = pfa.ID_PIECE INNER JOIN '.agrement.' a ON a.ID_AGR = pfa.ID_AGR',
 		'where' => "pfa.ID_AGR = :agr AND pa.MODE = :mode AND pfa.MODE = :mode",
 		'tri' => "ORDER BY pfa.ID_PIECE_FD DESC");
@@ -61,6 +62,21 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 	);
 	$checking = array($verif_data, $verif_bind);
 	$pieces = $manager->listAgrement($checking);
+	
+	$dates = ($pieces[0]['DATE_C'] == 'Ouvert') ? ['0', '0', '999999999'] : explode('/', $pieces[0]['DATE_C']);
+	if ( (int)$dates[2] == (int)date('Y') ) {
+		if ( (int)$dates[1] == (int)date('m') ) {
+			if ((int)$dates[0] >= (int)date('d')) {
+				$isSkiped = false;
+			}
+		}
+		else if ((int)$dates[1] > (int)date('m')) {
+			$isSkiped = false;
+		}
+	}
+	else if ((int)$dates[2] > (int)date('Y')) {
+		$isSkiped = false;
+	}
 }
 ?>
 <?php if (!empty($auth)): ?>
@@ -88,43 +104,75 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 								</div>
 							<?php else : ?>
 								<?php if ($id != 0): ?>
-								<form class="text-center card border border-light p-5" id="uploadFile" name="uploadFile" method="post" action="javascript:" enctype="multipart/form-data">
+									<?php if (!$isSkiped): ?>
+										<form class="text-center card border border-light p-5" id="uploadFile" name="uploadFile" method="post" action="javascript:" enctype="multipart/form-data">
 
-									<h6 class="color-primary mb-4"> <i class="far fa-question-circle"></i> Fichier pour <?= $pieces[0]['NAME']; ?> </h6>
+											<h6 class="color-primary mb-4"> <i class="far fa-question-circle"></i> Fichier pour <?= $pieces[0]['NAME']; ?> </h6>
 
-									<?php foreach ($pieces as $piece): ?>
-									<div class="col-md-12 mb-4">
-										<div class="flexbox flex-column flex-left-center mb-2">
-											<div class="custom-control custom-checkbox">
-											<?php
-												$rep = $bdd->prepare("SELECT * FROM ". document_agrement ."  WHERE ID_AGR = :id_agr AND ID_PIECE_FD = :id_piece_fd AND ID_CMPT =:id_compt");
-												$rep->bindParam(':id_agr', $id, PDO::PARAM_INT);
-												$rep->bindParam(':id_piece_fd', $piece['ID_PIECE_FD'], PDO::PARAM_INT);
-												$rep->bindParam(':id_compt', $agree, PDO::PARAM_INT);
-												$rep->execute();
-												$nbr = $rep->rowCount();
-												if ($nbr > 0) {
-													echo '<input type="checkbox" name="piece[]" multiple class="custom-control-input" value="'. $piece['ID_PIECE_FD'] .'" id="piece_'.$piece['ID_PIECE_FD'].'" checked disabled/>';
-													echo '<label class="custom-control-label" for="piece_'. $piece['ID_PIECE_FD'].'">'. $piece['LIBELLE']. '</label>';
-													echo '</div>';
-													echo '<span class="badge badge-warning">Déjà envoyé</span>';
-												}
-												else {
-													echo '<input type="checkbox" name="piece[]" multiple class="custom-control-input" id="piece_'.$piece['ID_PIECE_FD'].'" value="'. $piece['ID_PIECE_FD'] .'" />';
-													echo '<label class="custom-control-label" for="piece_'. $piece['ID_PIECE_FD'].'">'. $piece['LIBELLE'].'</label>';
-													echo '</div>';
-													echo '<input type="file" name="upload[]">';
-												}
-											?>
-										</div>
-									</div>
-									<?php endforeach; ?>
-									<input type="hidden" name="action" value="Espace/Traitement/list_doc_agr.php">
-									<input type="hidden" name="agrement" value="<?php echo $id;?>">
-									<input type="hidden" name="fcli" value="<?php echo $agree;?>">
-									<input type="hidden" name="type" value="set-update" />
-									<button class="btn bg-color-primary btn-block my-4" name="go" id="go" type="submit">MISE A JOUR</button>
-								</form>
+											<?php foreach ($pieces as $piece): ?>
+											<div class="col-md-12 mb-4">
+												<div class="flexbox flex-column flex-left-center mb-2">
+													<div class="custom-control custom-checkbox">
+													<?php
+														$rep = $bdd->prepare("SELECT * FROM ". document_agrement ."  WHERE ID_AGR = :id_agr AND ID_PIECE_FD = :id_piece_fd AND ID_CMPT =:id_compt");
+														$rep->bindParam(':id_agr', $id, PDO::PARAM_INT);
+														$rep->bindParam(':id_piece_fd', $piece['ID_PIECE_FD'], PDO::PARAM_INT);
+														$rep->bindParam(':id_compt', $agree, PDO::PARAM_INT);
+														$rep->execute();
+														$nbr = $rep->rowCount();
+														if ($nbr > 0) {
+															echo '<input type="checkbox" name="piece[]" multiple class="custom-control-input" value="'. $piece['ID_PIECE_FD'] .'" id="piece_'.$piece['ID_PIECE_FD'].'" checked disabled/>';
+															echo '<label class="custom-control-label" for="piece_'. $piece['ID_PIECE_FD'].'">'. $piece['LIBELLE']. '</label>';
+															echo '</div>';
+															echo '<span class="badge badge-warning">Déjà envoyé</span>';
+														}
+														else {
+															echo '<input type="checkbox" name="piece[]" multiple class="custom-control-input" id="piece_'.$piece['ID_PIECE_FD'].'" value="'. $piece['ID_PIECE_FD'] .'" />';
+															echo '<label class="custom-control-label" for="piece_'. $piece['ID_PIECE_FD'].'">'. $piece['LIBELLE'].'</label>';
+															echo '</div>';
+															echo '<input type="file" name="upload[]">';
+														}
+													?>
+												</div>
+											</div>
+											<?php endforeach; ?>
+											<input type="hidden" name="action" value="Espace/Traitement/list_doc_agr.php">
+											<input type="hidden" name="agrement" value="<?php echo $id;?>">
+											<input type="hidden" name="fcli" value="<?php echo $agree;?>">
+											<input type="hidden" name="type" value="set-update" />
+											<button class="btn bg-color-primary btn-block my-4" name="go" id="go" type="submit">MISE A JOUR</button>
+										</form>
+									<?php else : ?>
+										<div class="container card my-5">
+
+
+											<!--Section: Content-->
+											<section class="dark-grey-text">
+
+												<div class="row pr-lg-5">
+												<div class="col-md-7 mb-4">
+
+													<div class="view">
+													<img src="assets/pictures/delay.svg" class="img-fluid" alt="smaple image">
+													</div>
+
+												</div>
+												<div class="col-md-5 d-flex align-items-center">
+													<div>
+													
+													<h3 class="font-weight-bold mb-4">Delai depassé</h3>
+
+														<p>Vous ne pouvez plus mettre a jour cet agréments</p>
+													</div>
+												</div>
+												</div>
+
+											</section>
+											<!--Section: Content-->
+
+
+											</div>
+									<?php endif; ?>
 								<?php else : ?>
 									<div class="flexbox flex-center half-heigth">
 										<h4>Selectionnez un Agrement a mettre a jour</h4>

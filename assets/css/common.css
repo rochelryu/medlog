@@ -143,6 +143,12 @@ ul.sub-title-menu {
 
 /* for button */
 
+.pos-button-absolute {
+    top: 0;
+    right: -30px;
+    margin-bottom: 0;
+}
+
 .btn-rounded {
     border-radius: 40px;
 }

@@ -173,7 +173,6 @@
 					if ($key != 'compte') {
 
 						foreach ($value as $array) {
-
 							parent::hydrate($array[0]);
 							parent::update($array[1]);
 							$exist = parent::getVariable();

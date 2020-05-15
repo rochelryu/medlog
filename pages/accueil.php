@@ -156,50 +156,6 @@ unset($verif_bind, $verif_data, $checking);
 
 					</div>
 
-					<div class="row">
-
-						<!--First column-->
-						<div class="col-lg-3 col-md-6">
-						<i class="fas fa-gem fa-3x color-primary"></i>
-
-						<p class="font-weight-bold my-3">Agrements</p>
-
-						<p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-						</div>
-						<!--/First column-->
-
-						<!--Second column-->
-						<div class="col-lg-3 col-md-6">
-							<i class="fas fa-chart-area fa-3x color-primary"></i>
-
-							<p class="font-weight-bold my-3">Appels d'offres</p>
-
-							<p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-						</div>
-						<!--/Second column-->
-
-						<!--Third column-->
-						<div class="col-lg-3 col-md-6">
-							<i class="fas fa-cogs fa-3x color-primary"></i>
-
-							<p class="font-weight-bold my-3">Mise à jour documents</p>
-
-							<p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-						</div>
-						<!--/Third column-->
-
-						<!--Fourth column-->
-						<div class="col-lg-3 col-md-6">
-							<i class="fas fa-cloud-upload-alt fa-3x color-primary"></i>
-
-							<p class="font-weight-bold my-3">Envoyer des demandes</p>
-
-							<p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-						</div>
-						<!--/Fourth column-->
-
-					</div>
-
 
 					</section>
 					<!--Section: Content-->
@@ -230,7 +186,11 @@ unset($verif_bind, $verif_data, $checking);
 								<div class="description">
 								<h1 class="color-primary"><a <?= !empty($auth) ? 'href="?p=details-agrements&id='. $approval['ID_AGR'] .'"' : 'type="button" data-toggle="modal" data-target="#frameModalBottom"' ?>><?= $approval['LIBELLE']; ?></a></h1>
 								<h2>Agrement</h2>
-								<p>De Type <?= $approval['DOM_A']; ?> <br>Date de cloture est prevu pour le <?= $approval['DATE_C']; ?></p>
+								<p>
+									De Type <?= $approval['DOM_A']; ?>
+									<br>
+									Date de cloture : <?= $approval['DATE_C']; ?>
+								</p>
 								</div>
 							</div>
 						</div>
@@ -268,8 +228,11 @@ unset($verif_bind, $verif_data, $checking);
 												<h1 class="color-primary"><a <?= !empty($auth) ? 'href="?p=details-appels-offre&id='. $callOffer['ID_APPEL'] .'"' : 'type="button" data-toggle="modal" data-target="#frameModalBottom"' ?>><?= $callOffer['REF']; ?></a></h1>
 												<h2>Appel d'Offre</h2>
 												<p><blockquote class="blockquote mb-0">
-													<span class='text-small'>TYPE : <?= $callOffer['DOM_A']; ?> </span> <br>
-													<span class='text-small'>DÉBUT : <?= $callOffer['DATE_D']; ?> & FIN : <?= $callOffer['DATE_F']; ?> </span>
+													<span class='text-small'>Type : <?= $callOffer['DOM_A']; ?> </span>
+													<br>
+													<span class='text-small'>Libellé : <?= $callOffer['LIBELLE']; ?> </span>
+													<br>
+													<span class='text-small'>Début : <?= $callOffer['DATE_D']; ?> & Fin : <?= $callOffer['DATE_F']; ?> </span>
 												</blockquote>
 												</p>
 												</div>
@@ -304,7 +267,11 @@ unset($verif_bind, $verif_data, $checking);
 												<div class="description">
 												<h1 class="color-primary"><a <?= !empty($auth) ? 'href="?p=details-agrements&id='. $approval['ID_AGR'] .'"' : 'type="button" data-toggle="modal" data-target="#frameModalBottom"' ?>><?= $approval['LIBELLE']; ?></a></h1>
 												<h2>Agrement</h2>
-												<p>De Type <?= $approval['DOM_A']; ?> <br>Date de cloture est prevu pour le <?= $approval['DATE_C']; ?></p>
+												<p>
+													De Type <?= $approval['DOM_A']; ?>
+													<br>
+													Date de cloture : <?= $approval['DATE_C']; ?>
+												</p>
 												</div>
 											</div>
 										</div>

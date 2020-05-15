@@ -41,6 +41,14 @@ if (isset($_GET['p']) && !empty($_GET['p']) && file_exists('pages/' . $_GET['p']
   header("Content-disposition: attachment; filename=\"$document\""); 
   echo readfile($page);
 }
+else if (isset($_GET['dow']) && !empty($_GET['dow']) && file_exists('Espace/Traitement/files/files_founies_ao/' . $_GET['dow'])) {
+  $document = $_GET['dow'];
+  $page = 'Espace/Traitement/files/files_founies_ao/' . $document;
+  header("Content-Type: application/octet-stream");
+  header("Content-Transfer-Encoding: Binary");
+  header("Content-disposition: attachment; filename=\"$document\""); 
+  echo readfile($page);
+}
 
 else {
   if (isset($_SESSION['user_id']) && isset($_SESSION['username']) && isset($_SESSION['login_string'])) {
